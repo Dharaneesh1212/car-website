@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { UserRouter } from "./routes/userRoute";
+import createRoute from "./routes/serviceRoute.js"
 
 dotenv.config();
 const app = express();
@@ -12,6 +13,7 @@ app.get("/", (req, res) => {
   res.send("running successfully");
 });
 
+// Routes for authentication
 app.use("/api/v1/user", UserRouter);
 app.use("/api/v1/create", createRoute);
 
