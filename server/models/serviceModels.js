@@ -1,16 +1,16 @@
 import mongoose from "mongoose";
 
 const serviceSchema = new mongoose.Schema({
-  personName: {
+  personname: {
     type: String,
     required: true,
   },
-  carNumber: {
+  carnumber: {
     type: String,
     required: true,
     min: [8, "Number must contains atleast 9 characters"],
   },
-  carName: {
+  carname: {
     type: String,
     required: true,
   },
@@ -19,8 +19,8 @@ const serviceSchema = new mongoose.Schema({
     required: true,
   },
   status: {
-    type: String,
-    required: true,
+    type: Boolean,
+    default: false,
   },
 });
 

@@ -2,7 +2,7 @@ import {
   createService,
   updateServiceId,
   deleteServiceId,
-} from "../controller/serviceController";
+} from "../controller/serviceController.js";
 import express from "express";
 
 const router = express.Router();
