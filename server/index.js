@@ -2,12 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { UserRouter } from "./routes/userRoute.js";
-import createRoute from "./routes/serviceRoute.js"
+import createRoute from "./routes/serviceRoute.js";
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8000;
 const CONNECTION_URL = process.env.CONNECTION_URL;
+
+// middleware
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("running successfully");
