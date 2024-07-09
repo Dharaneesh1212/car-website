@@ -52,3 +52,5 @@ router.post("/signin", async (req, res) => {
 
   return res.json({ status: true, message: "loged in successfully" });
 });
+
+export { router as UserRouter };

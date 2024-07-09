@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { UserRouter } from "./routes/userRoute";
 
 dotenv.config();
 const app = express();
@@ -10,6 +11,9 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 app.get("/", (req, res) => {
   res.send("running successfully");
 });
+
+app.use("/api/v1/user", UserRouter);
+app.use("/api/v1/create", createRoute);
 
 mongoose
   .connect(CONNECTION_URL)

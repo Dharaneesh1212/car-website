@@ -22,3 +22,5 @@ router.put("/id", updateServiceId);
 // DELETE => http://localhost:8000/api/v1/service/id
 // DELETE => http://localhost:8000/api/v1/amc/id
 router.delete("/id", deleteServiceId);
+
+export default router;
