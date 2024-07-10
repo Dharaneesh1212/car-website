@@ -9,6 +9,7 @@ const serviceSchema = new mongoose.Schema({
     type: String,
     required: true,
     min: [8, "Number must contains atleast 9 characters"],
+    unique: true,
   },
   carname: {
     type: String,

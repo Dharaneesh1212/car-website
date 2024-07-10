@@ -16,11 +16,11 @@ router.post("/amc", createService);
 // update
 // PUT => http://localhost:8000/api/v1/service/id
 // PUT => http://localhost:8000/api/v1/amc/id
-router.put("/id", updateServiceId);
+router.put("/:id", updateServiceId);
 
 // delete
 // DELETE => http://localhost:8000/api/v1/service/id
 // DELETE => http://localhost:8000/api/v1/amc/id
-router.delete("/id", deleteServiceId);
+router.delete("/:id", deleteServiceId);
 
 export default router;
