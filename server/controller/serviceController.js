@@ -12,11 +12,10 @@ export const createService = async (req, res) => {
 // update
 export const updateServiceId = async (req, res) => {
   try {
-    const { id } = req.params;
-    const updateId = await Service.findByIdAndUpdate(id, req.body);
+    const updateId = await Service.findByIdAndUpdate (req.params.id,{$set:req.body},{new:true});
     res.status(200).json({ success: true, data: updateId });
   } catch (error) {
-    res.statue(500).json({ success: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 // delete
@@ -24,7 +23,7 @@ export const deleteServiceId = async (req, res) => {
   try {
     const { id } = req.params;
     const deleteId = await Service.findByIdAndDelete(id);
-    res.status(200).json({ success: true, data: deleteId });
+    res.status(200).json({ success: true, message:"Deleted" });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
