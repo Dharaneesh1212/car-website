@@ -18,7 +18,7 @@ router.post("/service", createService);
 router.get("/allservice",allServices);
 
 // GET => http://localhost:8000/api/v1/service
-router.get("/servicebyname/:name",serviceByName);
+router.get("/servicebyname/:personname",serviceByName);
 
 // update
 // PUT => http://localhost:8000/api/v1/service/id
