@@ -12,7 +12,11 @@ export const createService = async (req, res) => {
 // update
 export const updateServiceId = async (req, res) => {
   try {
-    const updateId = await Service.findByIdAndUpdate (req.params.id,{$set:req.body},{new:true});
+    const updateId = await Service.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
     res.status(200).json({ success: true, data: updateId });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -23,8 +27,24 @@ export const deleteServiceId = async (req, res) => {
   try {
     const { id } = req.params;
     const deleteId = await Service.findByIdAndDelete(id);
-    res.status(200).json({ success: true, message:"Deleted" });
+    res.status(200).json({ success: true, message: "Deleted" });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
+  }
+};
+// get all services
+export const allServices = async (req, res) => {
+  try {
+
+  } catch (error) {
+
+  }
+};
+// get service by name
+export const serviceByName = async (req, res) => {
+  try {
+
+  } catch (error) {
+
   }
 };
