@@ -44,9 +44,9 @@ export const allServices = async (req, res) => {
 // get service by name
 export const serviceByName = async (req, res) => {
   try {
-    const service = await Service.findOne({ name: req.params.name });
+    const service = await Service.findOne({ name: req.query.name });
     if (!service) {
-      return res.status(404).json({ message: "food not found" });
+      return res.status(404).json({ message: "service not found" });
     }
     res.status(200).json({ success: true, data: service });
   } catch (error) {
