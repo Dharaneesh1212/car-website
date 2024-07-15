@@ -35,16 +35,21 @@ export const deleteServiceId = async (req, res) => {
 // get all services
 export const allServices = async (req, res) => {
   try {
-
+    const service = await Service.find();
+    res.status(200).json({ success: true, data: service });
   } catch (error) {
-
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 // get service by name
 export const serviceByName = async (req, res) => {
   try {
-
+    const service = await Service.findOne({ name: req.params.name });
+    if (!service) {
+      return res.status(404).json({ message: "food not found" });
+    }
+    res.status(200).json({ success: true, data: service });
   } catch (error) {
-
+    res.status(500).json({ success: false, message: error.message });
   }
 };
