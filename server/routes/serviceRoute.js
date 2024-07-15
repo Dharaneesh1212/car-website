@@ -14,10 +14,10 @@ const router = express.Router();
 router.post("/service", createService);
 
 // get
-// GET => http://localhost:8000/api/v1/sevice
+// GET => http://localhost:8000/api/v1/service
 router.get("/service",allServices);
 
-// GET => http://localhost:8000/api/v1/sevice
+// GET => http://localhost:8000/api/v1/service
 router.get("/service",serviceByName);
 
 // update
