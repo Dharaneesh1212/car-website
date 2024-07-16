@@ -1,7 +1,7 @@
 import Service from "../models/serviceModels.js";
 import AmcService from "../models/amcModels.js";
 
-// create
+// create for service
 export const createService = async (req, res) => {
   try {
     const service = await new Service(req.body).save();
@@ -10,7 +10,7 @@ export const createService = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// create for amc service
 export const amcCreateService = async (req, res) => {
   try {
     const service = await new AmcService(req.body).save();
@@ -19,7 +19,8 @@ export const amcCreateService = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-// update
+
+// update for service
 export const updateServiceId = async (req, res) => {
   try {
     const updateId = await Service.findByIdAndUpdate(
@@ -32,7 +33,7 @@ export const updateServiceId = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// update for amc service
 export const amcUpdateServiceId = async (req, res) => {
   try {
     const updateId = await AmcService.findByIdAndUpdate(
@@ -45,7 +46,8 @@ export const amcUpdateServiceId = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-// delete
+
+// delete for service
 export const deleteServiceId = async (req, res) => {
   try {
     const { id } = req.params;
@@ -55,7 +57,7 @@ export const deleteServiceId = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// delete for amc service
 export const amcDeleteServiceId = async (req, res) => {
   try {
     const { id } = req.params;
@@ -65,7 +67,8 @@ export const amcDeleteServiceId = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-// get all services
+
+// get all services for service
 export const allServices = async (req, res) => {
   try {
     const service = await Service.find();
@@ -74,7 +77,7 @@ export const allServices = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// get all services for amc service
 export const amcAllServices = async (req, res) => {
   try {
     const service = await AmcService.find();
@@ -83,10 +86,12 @@ export const amcAllServices = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-// get service by name
+// get service by name for services
 export const serviceByName = async (req, res) => {
   try {
-    const service = await Service.findOne({ personname: req.params.personname });
+    const service = await Service.findOne({
+      personname: req.params.personname,
+    });
     if (!service) {
       return res.status(404).json({ message: "service not found" });
     }
@@ -95,10 +100,12 @@ export const serviceByName = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
-
+// get service by name for amc services
 export const amcServiceByName = async (req, res) => {
   try {
-    const service = await AmcService.findOne({ personname: req.params.personname });
+    const service = await AmcService.findOne({
+      personname: req.params.personname,
+    });
     if (!service) {
       return res.status(404).json({ message: "service not found" });
     }
