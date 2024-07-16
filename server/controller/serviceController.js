@@ -1,4 +1,5 @@
 import Service from "../models/serviceModels.js";
+import AmcService from "../models/amcModels.js";
 
 // create
 export const createService = async (req, res) => {
@@ -9,10 +10,32 @@ export const createService = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const amcCreateService = async (req, res) => {
+  try {
+    const service = await new AmcService(req.body).save();
+    res.status(200).json({ success: true, data: service });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 // update
 export const updateServiceId = async (req, res) => {
   try {
     const updateId = await Service.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    res.status(200).json({ success: true, data: updateId });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const amcUpdateServiceId = async (req, res) => {
+  try {
+    const updateId = await AmcService.findByIdAndUpdate(
       req.params.id,
       { $set: req.body },
       { new: true }
@@ -32,6 +55,16 @@ export const deleteServiceId = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const amcDeleteServiceId = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleteId = await AmcService.findByIdAndDelete(id);
+    res.status(200).json({ success: true, message: "Deleted" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 // get all services
 export const allServices = async (req, res) => {
   try {
@@ -41,10 +74,31 @@ export const allServices = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+export const amcAllServices = async (req, res) => {
+  try {
+    const service = await AmcService.find();
+    res.status(200).json({ success: true, data: service });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
 // get service by name
 export const serviceByName = async (req, res) => {
   try {
     const service = await Service.findOne({ personname: req.params.personname });
+    if (!service) {
+      return res.status(404).json({ message: "service not found" });
+    }
+    res.status(200).json({ success: true, data: service });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+export const amcServiceByName = async (req, res) => {
+  try {
+    const service = await AmcService.findOne({ personname: req.params.personname });
     if (!service) {
       return res.status(404).json({ message: "service not found" });
     }
