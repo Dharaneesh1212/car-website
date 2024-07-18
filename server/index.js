@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { UserRouter } from "./routes/userRoute.js";
 import createRoute from "./routes/serviceRoute.js";
+import router from "./routes/amcServiceRoute.js";
 
 dotenv.config();
 const app = express();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 // Routes for authentication
 app.use("/api/v1/user", UserRouter);
 app.use("/api/v1/create", createRoute);
+app.use("/api/v1/amccreate", router);
 
 mongoose
   .connect(CONNECTION_URL)

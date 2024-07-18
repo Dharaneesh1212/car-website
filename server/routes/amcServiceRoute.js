@@ -10,14 +10,14 @@ import express from "express";
 const router = express.Router();
 
 // create
-// POST => http://localhost:8000/api/v1/service
+// POST => http://localhost:8000/api/v1/amcservice
 router.post("/amcservice", amcCreateService);
 
 // get
-// GET => http://localhost:8000/api/v1/service
+// GET => http://localhost:8000/api/v1/amcallservice
 router.get("/amcallservice", amcAllServices);
 
-// GET => http://localhost:8000/api/v1/service
+// GET => http://localhost:8000/api/v1/amcservicebyname
 router.get("/amcservicebyname/:personname", amcServiceByName);
 
 // update
