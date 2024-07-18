@@ -11,14 +11,14 @@ const router = express.Router();
 
 // create
 // POST => http://localhost:8000/api/v1/service
-router.post("/service", amcCreateService);
+router.post("/amcservice", amcCreateService);
 
 // get
 // GET => http://localhost:8000/api/v1/service
-router.get("/allservice", amcAllServices);
+router.get("/amcallservice", amcAllServices);
 
 // GET => http://localhost:8000/api/v1/service
-router.get("/servicebyname/:personname", amcServiceByName);
+router.get("/amcservicebyname/:personname", amcServiceByName);
 
 // update
 // PUT => http://localhost:8000/api/v1/service/id
