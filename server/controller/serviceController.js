@@ -89,7 +89,7 @@ export const amcAllServices = async (req, res) => {
 // get service by name for services
 export const serviceByName = async (req, res) => {
   try {
-    const service = await Service.findOne({
+    const service = await Service.find({
       personname: req.params.personname,
     });
     if (!service) {
@@ -103,7 +103,7 @@ export const serviceByName = async (req, res) => {
 // get service by name for amc services
 export const amcServiceByName = async (req, res) => {
   try {
-    const service = await AmcService.findOne({
+    const service = await AmcService.find({
       personname: req.params.personname,
     });
     if (!service) {
