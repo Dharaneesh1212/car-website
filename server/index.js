@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { UserRouter } from "./routes/userRoute.js";
 import createRoute from "./routes/serviceRoute.js";
 import router from "./routes/amcServiceRoute.js";
-import cors from "cors"
+import cors from "cors";
 
 dotenv.config();
 const app = express();
