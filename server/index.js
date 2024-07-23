@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { UserRouter } from "./routes/userRoute.js";
 import createRoute from "./routes/serviceRoute.js";
 import router from "./routes/amcServiceRoute.js";
+import cors from "cors"
 
 dotenv.config();
 const app = express();
@@ -12,6 +13,7 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 
 // middleware
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("running successfully");
