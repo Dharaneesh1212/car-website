@@ -23,6 +23,10 @@ const amcServiceSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  package: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const AmcService = mongoose.model("AmcService", amcServiceSchema);
