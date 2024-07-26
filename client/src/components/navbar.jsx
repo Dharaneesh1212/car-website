@@ -1,4 +1,4 @@
-const Service = () => {
+const Navbar = () => {
     return ( 
         <main>
             
@@ -6,4 +6,4 @@ const Service = () => {
      );
 }
  
-export default Service;
+export default Navbar;
