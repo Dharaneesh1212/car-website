@@ -1,6 +1,6 @@
 const Gallery = () => {
     return ( 
-        <main>
+        <main className="bg-black">
             
         </main>
      );

@@ -1,6 +1,6 @@
 const Amc = () => {
     return ( 
-        <main>
+        <main className="bg-black">
             
         </main>
      );

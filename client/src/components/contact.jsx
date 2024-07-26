@@ -1,6 +1,6 @@
 const Contact = () => {
     return ( 
-        <main>
+        <main className="bg-black">
             
         </main>
      );

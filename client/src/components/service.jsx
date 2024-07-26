@@ -1,6 +1,6 @@
 const Service = () => {
     return ( 
-        <main>
+        <main className="bg-black">
             
         </main>
      );

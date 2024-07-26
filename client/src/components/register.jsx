@@ -1,6 +1,6 @@
 const Register = () => {
     return ( 
-        <main>
+        <main className="bg-black">
             
         </main>
      );

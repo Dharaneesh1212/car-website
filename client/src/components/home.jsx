@@ -2,7 +2,7 @@ import chvy from "../assets/images/chvy.jpg";
 
 const Home = () => {
   return (
-    <main>
+    <main className="bg-black">
       <div>
         <img src={chvy} alt="" />
       </div>
