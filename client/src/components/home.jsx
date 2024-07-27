@@ -1,8 +1,9 @@
-import chvy from "../assets/images/chvy.jpg";
-
 const Home = () => {
   return (
-    <main className="bg-black h-screen flex items-center justify-center">
+    <main
+      id="chvy"
+      className="bg-black h-screen flex items-center justify-center relative"
+    >
       <div className="flex items-start justify-center flex-col font-semibold text-5xl text-white absolute top-[14rem] left-[3rem] gap-10">
         <div className="flex items-start justify-center flex-col gap-2">
           <h1>
@@ -16,9 +17,6 @@ const Home = () => {
           <p>vehicle is always in top condition. Let us take care of </p>
           <p>your car, So you can focus on what matters most.</p>
         </div>
-      </div>
-      <div>
-        <img src={chvy} alt="" />
       </div>
     </main>
   );
