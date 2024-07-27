@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdHome } from "react-icons/md";
 import { GrGallery } from "react-icons/gr";
 import { BiSolidCarMechanic } from "react-icons/bi";
