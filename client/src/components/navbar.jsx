@@ -2,13 +2,13 @@ import { Link, Outlet } from "react-router-dom";
 import { MdHome } from "react-icons/md";
 import { GrGallery } from "react-icons/gr";
 import { BiSolidCarMechanic } from "react-icons/bi";
-import { GiQueenCrown } from "react-icons/gi";
+import { FaCrown } from "react-icons/fa6";
 import { MdContactMail } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <main className="w-full h-[5rem] fixed flex items-center justify-between p-10">
+    <main className="w-full h-[5rem] fixed flex items-center justify-between p-10 z-10">
       <div className="font-semibold text-xl text-white">
         <h1>
           AUT<span className="text-red-600">O</span>W
@@ -41,7 +41,7 @@ const Navbar = () => {
           to="/amc"
           className="flex justify-center items-center gap-1 text-xl text-white hover:text-red-600"
         >
-          <GiQueenCrown />
+          <FaCrown />
           AMC
         </Link>
         <Link
