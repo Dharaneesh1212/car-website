@@ -8,7 +8,6 @@ import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <>
     <main className="w-full h-[5rem] fixed flex items-center justify-between p-10">
       <div className="font-semibold text-xl text-white">
         <h1>
@@ -61,9 +60,6 @@ const Navbar = () => {
         </Link>
       </div>
     </main>
-      <Outlet/>
-      </>
-    
   );
 };
 
