@@ -1,6 +1,5 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Gallery from "./components/gallery";
 import Service from "./components/service";
