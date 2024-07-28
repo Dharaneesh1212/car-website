@@ -31,7 +31,7 @@ const Register = () => {
               placeholder="Password"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
-            <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-red-500 rounded-md font-sans font-medium text-lg">
+            <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-red-600 rounded-md font-sans font-medium text-lg">
               Sign Up
             </button>
           </form>
@@ -53,7 +53,7 @@ const Register = () => {
               placeholder="Password"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
-            <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-blue-500 rounded-md font-sans font-medium text-lg">
+            <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-blue-600 rounded-md font-sans font-medium text-lg">
               Sign In
             </button>
           </form>
