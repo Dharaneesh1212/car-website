@@ -8,7 +8,7 @@ const Register = () => {
   };
   return (
     <main className="flex items-center justify-center h-screen bg-black w-full">
-      <div className="flex items-center justify-evenly flex-row bg-white h-[30rem] w-[50rem] rounded-3xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] mt-10">
+      <div className="flex items-center justify-evenly flex-row bg-zinc-900 text-white h-[30rem] w-[50rem] rounded-3xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] mt-10">
         <div
           className={`flex items-center justify-center ${
             activeTab === "sign-up" ? "" : "hidden"
@@ -19,17 +19,17 @@ const Register = () => {
             <input
               type="text"
               placeholder="Name"
-              className="animate__animated animate__zoomIn h-8 w-72 bg-slate-100 p-1 rounded-md font-sans font-medium text-lg outline-none"
+              className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
               type="email"
               placeholder="Email"
-              className="animate__animated animate__zoomIn h-8 w-72 bg-slate-100 p-1 rounded-md font-sans font-medium text-lg outline-none"
+              className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
               type="password"
               placeholder="Password"
-              className="animate__animated animate__zoomIn h-8 w-72 bg-slate-100 p-1 rounded-md font-sans font-medium text-lg outline-none"
+              className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-red-500 rounded-md font-sans font-medium text-lg">
               Sign Up
@@ -46,12 +46,12 @@ const Register = () => {
             <input
               type="email"
               placeholder="Email"
-              className="animate__animated animate__zoomIn h-8 w-72 bg-slate-100 p-1 rounded-md font-sans font-medium text-lg outline-none"
+              className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
               type="password"
               placeholder="Password"
-              className="animate__animated animate__zoomIn h-8 w-72 bg-slate-100 p-1 rounded-md font-sans font-medium text-lg outline-none"
+              className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-blue-500 rounded-md font-sans font-medium text-lg">
               Sign In
