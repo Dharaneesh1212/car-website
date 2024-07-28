@@ -3,12 +3,14 @@ import Carousels from "./carousel";
 const Gallery = () => {
   return (
     <main className="bg-black w-full">
-      <Carousels />
+      <div className="animate__animated animate__zoomIn">
+        <Carousels />
+      </div>
       <main className="flex items-center justify-center flex-wrap bg-black text-white pt-8 gap-10 pb-10">
         <div className="flex items-center justify-center gap-10">
           <div
             id="card-one"
-            className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
+            className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
             <div className="flex items-start justify-center flex-col text-lg">
               <span>John D</span>
@@ -30,7 +32,7 @@ const Gallery = () => {
           </div>
           <div
             id="card-two"
-            className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
+            className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
             <div className="flex items-start justify-center flex-col text-lg">
               <span>Sarah M</span>
@@ -52,7 +54,7 @@ const Gallery = () => {
           </div>
           <div
             id="card-three"
-            className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
+            className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
             <div className="flex items-start justify-center flex-col text-lg">
               <span>Michael J</span>
@@ -77,7 +79,7 @@ const Gallery = () => {
         <div className="flex items-center justify-center gap-10">
           <div
             id="card-four"
-            className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
+            className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
             <div className="flex items-start justify-center flex-col text-lg">
               <span>Emily K</span>
@@ -99,7 +101,7 @@ const Gallery = () => {
           </div>
           <div
             id="card-five"
-            className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
+            className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
             <div className="flex items-start justify-center flex-col text-lg">
               <span>Brain</span>
@@ -121,7 +123,7 @@ const Gallery = () => {
           </div>
           <div
             id="card-six"
-            className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
+            className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
             <div className="flex items-start justify-center flex-col text-lg">
               <span>Clarie</span>
