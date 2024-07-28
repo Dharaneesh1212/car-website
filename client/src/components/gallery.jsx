@@ -10,7 +10,7 @@ const Gallery = () => {
             id="card-one"
             className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
-            <div className="flex items-start justify-center flex-col">
+            <div className="flex items-start justify-center flex-col text-lg">
               <span>John D</span>
               <span>Rating: ⭐⭐⭐⭐⭐</span>
               <span>Date: July 20, 2024</span>
@@ -32,7 +32,7 @@ const Gallery = () => {
             id="card-two"
             className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
-            <div className="flex items-start justify-center flex-col">
+            <div className="flex items-start justify-center flex-col text-lg">
               <span>Sarah M</span>
               <span>Rating: ⭐⭐⭐</span>
               <span>Date: July 18, 2024</span>
@@ -54,7 +54,7 @@ const Gallery = () => {
             id="card-three"
             className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
-            <div className="flex items-start justify-center flex-col">
+            <div className="flex items-start justify-center flex-col text-lg">
               <span>Michael J</span>
               <span>Rating: ⭐⭐⭐⭐⭐</span>
               <span>Date: July 28, 2024</span>
@@ -79,7 +79,7 @@ const Gallery = () => {
             id="card-four"
             className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
-            <div className="flex items-start justify-center flex-col">
+            <div className="flex items-start justify-center flex-col text-lg">
               <span>Emily K</span>
               <span>Rating: ⭐⭐</span>
               <span>Date: July 15, 2024</span>
@@ -101,7 +101,7 @@ const Gallery = () => {
             id="card-five"
             className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
-            <div className="flex items-start justify-center flex-col">
+            <div className="flex items-start justify-center flex-col text-lg">
               <span>Brain</span>
               <span>Rating: ⭐⭐⭐</span>
               <span>Date: July 11, 2024</span>
@@ -123,7 +123,7 @@ const Gallery = () => {
             id="card-six"
             className="h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
           >
-            <div className="flex items-start justify-center flex-col">
+            <div className="flex items-start justify-center flex-col text-lg">
               <span>Clarie</span>
               <span>Rating: ⭐⭐⭐⭐⭐</span>
               <span>Date: July 01, 2024</span>
