@@ -38,12 +38,12 @@ const Carousels = () => {
           autoPlaySpeed={2000}
           autoPlay={true}
         >
-          <img id="img" className="w-screen h-[40rem]" src={one} alt="" />
-          <img id="img" className="w-screen h-[40rem]" src={two} alt="" />
-          <img id="img" className="w-screen h-[40rem]" src={three} alt="" />
-          <img id="img" className="w-screen h-[40rem]" src={four} alt="" />
-          <img id="img" className="w-screen h-[40rem]" src={five} alt="" />
-          <img id="img" className="w-screen h-[40rem]" src={six} alt="" />
+          <img id="img" className="w-screen h-[40rem]" src={one} alt="ceramic coating" />
+          <img id="img" className="w-screen h-[40rem]" src={two} alt="oil and filters checking" />
+          <img id="img" className="w-screen h-[40rem]" src={three} alt="engine service" />
+          <img id="img" className="w-screen h-[40rem]" src={four} alt="exterior wash" />
+          <img id="img" className="w-screen h-[40rem]" src={five} alt="interior wash" />
+          <img id="img" className="w-screen h-[40rem]" src={six} alt="wheel alignment" />
         </Carousel>
       </div>
     </main>

@@ -8,7 +8,7 @@ import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <main className="w-full h-[5rem] fixed flex items-center justify-between p-10 z-10">
+    <main id="navbar" className="w-screen h-[5rem] fixed flex items-center justify-between p-10 z-10">
       <div className="font-semibold text-xl text-white">
         <h1>
           AUT<span className="text-red-600">O</span>W

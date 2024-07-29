@@ -2,7 +2,7 @@ const Home = () => {
   return (
     <main
       id="chvy"
-      className="bg-black h-screen flex items-center justify-center relative w-full"
+      className="bg-black h-screen flex items-center justify-center relative"
     >
       <div className="flex items-start justify-center flex-col font-semibold text-5xl text-white absolute top-[14rem] left-[4rem] gap-8">
         <div className="animate__animated animate__zoomIn flex items-start justify-center flex-col gap-4">

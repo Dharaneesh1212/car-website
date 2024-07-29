@@ -3,3 +3,68 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Mobile Responsive */
+@media (min-width: 375px) and (max-width: 425px) {
+  #register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24rem;
+  }
+  #signup {
+    height: 30rem;
+    width: 12rem;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  #signin {
+    height: 30rem;
+    width: 12rem;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  #signupform {
+    height: 30rem;
+    width: 11.8rem;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  #signinform {
+    height: 30rem;
+    width: 11.8rem;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  #inputone {
+    width: 10rem;
+  }
+  #inputtwo {
+    width: 10rem;
+  }
+  #inputthree {
+    width: 10rem;
+  }
+  #inputfour {
+    width: 10rem;
+  }
+  #inputfive {
+    width: 10rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 426px) and (max-width: 768px) {
+  #signup {
+    width: 24rem;
+  }
+  #signin {
+    width: 24rem;
+  }
+  #signupform {
+    width: 24rem;
+  }
+  #signinform {
+    width: 24rem;
+  }
+}

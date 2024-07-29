@@ -2,12 +2,12 @@ import Carousels from "./carousel";
 
 const Gallery = () => {
   return (
-    <main className="bg-black w-full">
-      <div className="animate__animated animate__zoomIn">
+    <main id="galery" className="bg-black h-screen">
+      <div id="carousel" className="animate__animated animate__zoomIn">
         <Carousels />
       </div>
-      <main className="flex items-center justify-center flex-wrap bg-black text-white pt-8 gap-10 pb-10">
-        <div className="flex items-center justify-center gap-10">
+      <main id="review" className="w-full flex items-center justify-center flex-wrap bg-black text-white pt-8 gap-10 pb-10">
+        <div id="set-one" className="flex items-center justify-center gap-10">
           <div
             id="card-one"
             className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"
@@ -76,7 +76,7 @@ const Gallery = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-10">
+        <div id="set-two" className="flex items-center justify-center gap-10">
           <div
             id="card-four"
             className="animate__animated animate__zoomIn h-[25rem] w-[25rem] gap-6 flex items-center justify-center flex-col bg-zinc-900 rounded-lg p-4"

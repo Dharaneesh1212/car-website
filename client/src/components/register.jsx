@@ -7,26 +7,37 @@ const Register = () => {
     setActiveTab(activeTab === "sign-up" ? "sign-in" : "sign-up");
   };
   return (
-    <main className="flex items-center justify-center h-screen bg-black w-full">
+    <main
+      id="register"
+      className="flex items-center justify-center h-screen bg-black w-screen"
+    >
       <div className="flex items-center justify-evenly flex-row bg-zinc-900 text-white h-[30rem] w-[50rem] rounded-3xl shadow-[0_5px_15px_rgba(0,0,0,0.35)] mt-10">
         <div
           className={`flex items-center justify-center ${
             activeTab === "sign-up" ? "" : "hidden"
           }`}
         >
-          <form className="flex items-center justify-center flex-col gap-8 w-[25rem]">
-            <h1 className="animate__animated animate__zoomIn text-2xl font-semibold font-mono">Create Account</h1>
+          <form
+            id="signupform"
+            className="flex items-center justify-center flex-col gap-8 w-[25rem]"
+          >
+            <h1 className="animate__animated animate__zoomIn text-2xl font-semibold font-mono">
+              Create Account
+            </h1>
             <input
+              id="inputone"
               type="text"
               placeholder="Name"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
+              id="inputtwo"
               type="email"
               placeholder="Email"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
+              id="inputthree"
               type="password"
               placeholder="Password"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
@@ -41,14 +52,21 @@ const Register = () => {
             activeTab === "sign-in" ? "" : "hidden"
           }`}
         >
-          <form className="flex items-center justify-center flex-col gap-10 w-[25rem]">
-            <h1 className="animate__animated animate__zoomIn text-2xl font-semibold font-mono">Sign In</h1>
+          <form
+            id="signinform"
+            className="flex items-center justify-center flex-col gap-10 w-[25rem]"
+          >
+            <h1 className="animate__animated animate__zoomIn text-2xl font-semibold font-mono">
+              Sign In
+            </h1>
             <input
+              id="inputfour"
               type="email"
               placeholder="Email"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
+              id="inputfive"
               type="password"
               placeholder="Password"
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
@@ -61,6 +79,7 @@ const Register = () => {
         <div>
           <div className="flex items-center justify-center flex-row">
             <div
+              id="signin"
               className={`bg-red-500 h-[30rem] w-[25rem] rounded-3xl flex justify-center items-center flex-col p-2 gap-4 ${
                 activeTab === "sign-in" ? "" : "hidden"
               }`}
@@ -79,6 +98,7 @@ const Register = () => {
               </button>
             </div>
             <div
+              id="signup"
               className={`bg-blue-500 h-[30rem] w-[25rem] rounded-3xl flex justify-center items-center flex-col p-2 gap-4 ${
                 activeTab === "sign-up" ? "" : "hidden"
               }`}

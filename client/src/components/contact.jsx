@@ -5,10 +5,10 @@ import { FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <main className="bg-black w-full flex items-center justify-center flex-col">
+    <main id="contact" className="bg-black flex items-center justify-center flex-col">
       <div className="flex items-center justify-center flex-col gap-4 h-auto bg-zinc-900 p-12 rounded-xl mt-[6rem] text-lg m-4">
         <div className="flex items-start justify-center h-auto bg-zinc-900 text-red-600 text-3xl p-4 rounded-xl gap-8">
-          <div className="flex items-center justify-center gap-8 bg-zinc-700 h-[7rem] w-[20rem] rounded-md">
+          <div id="social" className="flex items-center justify-center gap-8 bg-zinc-700 h-[7rem] w-[20rem] rounded-md">
             <div className="phone flex items-center justify-center p-2 bg-zinc-900 rounded-full animate__animated animate__zoomIn">
               <a href="tel:+919566375213">
                 <i>
@@ -31,7 +31,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
-          <div className="flex items-center justify-center gap-8 bg-zinc-700 h-[7rem] w-[33rem] rounded-md">
+          <div id="mail" className="flex items-center justify-center gap-8 bg-zinc-700 h-[7rem] w-[33rem] rounded-md">
             <div className="email flex items-center justify-center flex-row gap-4 p-3 bg-zinc-900 rounded-full animate__animated animate__zoomIn">
               <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new">
                 <i>
