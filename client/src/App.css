@@ -1,7 +1,37 @@
 #chvy {
-  background-image: url("E:\projects\car-website\client\src\assets\images\chvy.jpg");
+  background-image: url("E:/projects/car-website/client/src/assets/images/chvy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#text-container {
+  position: absolute;
+  top: 14rem;
+  left: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 3rem;
+  color: white;
+  font-weight: 600;
+}
+
+#text-container h1 {
+  margin: 0;
+}
+
+#text-container p {
+  font-size: 1.25rem;
+  font-weight: 400;
 }
 
 /* Mobile Responsive */
@@ -51,6 +81,16 @@
   #inputfive {
     width: 10rem;
   }
+  #text-container {
+    top: 10rem;
+    left: 1rem;
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+
+  #text-container p {
+    font-size: 0.75rem;
+  }
 }
 
 /* Tablet Responsive */
@@ -66,5 +106,15 @@
   }
   #signinform {
     width: 24rem;
+  }
+  #text-container {
+    top: 12rem;
+    left: 2rem;
+    gap: 1.5rem;
+    font-size: 2rem;
+  }
+
+  #text-container p {
+    font-size: 1rem;
   }
 }
