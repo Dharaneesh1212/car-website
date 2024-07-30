@@ -4,8 +4,11 @@ const Service = () => {
       id="service"
       className="bg-black w-screen h-screen flex items-center flex-col justify-center gap-4"
     >
-      <div className="flex items-center justify-start flex-col gap-10 h-[20rem]">
-        <div className="flex items-center justify-center gap-4">
+      <div
+        id="main-service"
+        className="flex items-center justify-start flex-col gap-10 h-[20rem]"
+      >
+        <div id="sub-ones" className="flex items-center justify-center gap-4">
           <input
             id="service-name"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
@@ -43,7 +46,7 @@ const Service = () => {
         >
           Register
         </button>
-        <div className="flex items-center justify-center gap-4">
+        <div id="sub-twos" className="flex items-center justify-center gap-4">
           <input
             id="service-search"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
