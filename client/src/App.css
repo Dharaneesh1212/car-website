@@ -34,6 +34,11 @@
   font-weight: 400;
 }
 
+#gallery {
+  background-color: black;
+  height: 100vh;
+}
+
 /* Mobile Responsive */
 @media (min-width: 375px) and (max-width: 425px) {
   #register {
@@ -91,6 +96,39 @@
   #text-container p {
     font-size: 0.75rem;
   }
+  #review {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #set-one,
+  #set-two {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  #card-one,
+  #card-two,
+  #card-three,
+  #card-four,
+  #card-five,
+  #card-six {
+    width: 20rem; /* Adjust card width for mobile */
+    height: auto; /* Adjust card height for mobile */
+    font-size: 0.875rem; /* Adjust font size for mobile */
+  }
+
+  #card-one p,
+  #card-two p,
+  #card-three p,
+  #card-four p,
+  #card-five p,
+  #card-six p {
+    font-size: 0.75rem; /* Adjust font size of text inside cards for mobile */
+  }
 }
 
 /* Tablet Responsive */
@@ -116,5 +154,38 @@
 
   #text-container p {
     font-size: 1rem;
+  }
+  #review {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  #set-one,
+  #set-two {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  #card-one,
+  #card-two,
+  #card-three,
+  #card-four,
+  #card-five,
+  #card-six {
+    width: 22rem; /* Adjust card width for tablet */
+    height: auto; /* Adjust card height for tablet */
+    font-size: 1rem; /* Adjust font size for tablet */
+  }
+
+  #card-one p,
+  #card-two p,
+  #card-three p,
+  #card-four p,
+  #card-five p,
+  #card-six p {
+    font-size: 0.875rem; /* Adjust font size of text inside cards for tablet */
   }
 }
