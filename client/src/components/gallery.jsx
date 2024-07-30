@@ -2,7 +2,7 @@ import Carousels from "./carousel";
 
 const Gallery = () => {
   return (
-    <main id="galery" className="bg-black h-screen">
+    <main id="gallery" className="bg-black h-screen">
       <div id="carousel" className="animate__animated animate__zoomIn">
         <Carousels />
       </div>
