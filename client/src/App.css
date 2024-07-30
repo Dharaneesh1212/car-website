@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #chvy {
   background-image: url("E:/projects/car-website/client/src/assets/images/chvy.jpg");
   background-repeat: no-repeat;
@@ -116,9 +122,9 @@
   #card-four,
   #card-five,
   #card-six {
-    width: 20rem; /* Adjust card width for mobile */
-    height: auto; /* Adjust card height for mobile */
-    font-size: 0.875rem; /* Adjust font size for mobile */
+    width: 20rem;
+    height: auto;
+    font-size: 0.875rem;
   }
 
   #card-one p,
@@ -127,7 +133,7 @@
   #card-four p,
   #card-five p,
   #card-six p {
-    font-size: 0.75rem; /* Adjust font size of text inside cards for mobile */
+    font-size: 0.75rem;
   }
 }
 
@@ -175,9 +181,9 @@
   #card-four,
   #card-five,
   #card-six {
-    width: 22rem; /* Adjust card width for tablet */
-    height: auto; /* Adjust card height for tablet */
-    font-size: 1rem; /* Adjust font size for tablet */
+    width: 22rem;
+    height: auto;
+    font-size: 1rem;
   }
 
   #card-one p,
@@ -186,6 +192,6 @@
   #card-four p,
   #card-five p,
   #card-six p {
-    font-size: 0.875rem; /* Adjust font size of text inside cards for tablet */
+    font-size: 0.875rem;
   }
 }
