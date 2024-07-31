@@ -135,6 +135,58 @@
   #card-six p {
     font-size: 0.75rem;
   }
+  #contact-box {
+    padding: 4rem 1rem;
+    width: 100%;
+  }
+
+  #box-one {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  #social,
+  #mail {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    font-size: 1.4rem;
+  }
+
+  #social {
+    gap: 1rem;
+  }
+
+  #phone,
+  #whatsapp,
+  #instagram {
+    padding: 0.5rem;
+  }
+
+  #box-two {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #box-three {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #contact-name,
+  #contact-email,
+  #contact-subject,
+  #contact-message {
+    width: 100%;
+  }
+
+  #send {
+    width: 100%;
+  }
 }
 
 /* Tablet Responsive */
@@ -193,5 +245,52 @@
   #card-five p,
   #card-six p {
     font-size: 0.875rem;
+  }
+  #contact-box {
+    padding: 8rem 3rem 4rem;
+    width: 100%;
+  }
+
+  #box-one {
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  #social,
+  #mail {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  #phone,
+  #whatsapp,
+  #instagram {
+    padding: 1rem;
+  }
+
+  #box-two {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #box-three {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  #contact-name,
+  #contact-email,
+  #contact-subject,
+  #contact-message {
+    width: 100%;
+  }
+
+  #send {
+    width: 100%;
   }
 }
