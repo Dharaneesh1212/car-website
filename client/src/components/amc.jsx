@@ -2,11 +2,11 @@ const Amc = () => {
   return (
     <main
       id="amc"
-      className="bg-black w-screen h-screen flex items-center flex-col justify-center gap-4"
+      className="bg-black w-screen h-screen flex items-center flex-col justify-start pt-28 gap-4"
     >
       <div
         id="main-amc"
-        className="flex items-center justify-start flex-col gap-10 h-[20rem]"
+        className="flex items-center justify-start flex-col gap-10 w-full bg-black"
       >
         <div id="sub-onea" className="flex items-center justify-center gap-4">
           <input

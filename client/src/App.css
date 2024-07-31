@@ -188,14 +188,16 @@
     width: 100%;
   }
   #sub-ones,
-  #sub-twos{
+  #sub-twos {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
   }
   #sub-onea,
-  #sub-twoa{
+  #sub-twoa {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
   }
 }
 
@@ -312,13 +314,15 @@
     width: 100%;
   }
   #sub-ones,
-  #sub-twos{
+  #sub-twos {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
   }
   #sub-onea,
-  #sub-twoa{
+  #sub-twoa {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
   }
 }
