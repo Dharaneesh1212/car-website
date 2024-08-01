@@ -206,6 +206,13 @@
     height: 20rem;
     width: 20rem;
   }
+  #reset-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    width: 20rem;
+  }
 }
 
 /* Tablet Responsive */
@@ -333,6 +340,9 @@
     margin: 1rem;
   }
   #forgot-password {
+    height: 20rem;
+  }
+  #reset-password {
     height: 20rem;
   }
 }
