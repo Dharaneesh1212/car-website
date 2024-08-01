@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [activeTab, setActiveTab] = useState("sign-up");
@@ -74,6 +75,7 @@ const Register = () => {
             <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-blue-600 rounded-md font-sans font-medium text-lg">
               Sign In
             </button>
+            <Link to="/forgotPassword">Forgot password?</Link>
           </form>
         </div>
         <div>

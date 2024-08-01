@@ -7,6 +7,7 @@ import Amc from "./components/amc";
 import Contact from "./components/contact";
 import Register from "./components/register";
 import Root from "./components/root";
+import ForgotPassword from "./components/forgotPassword";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -37,6 +38,10 @@ const App = () => {
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/forgotPassword",
+          element: <ForgotPassword />,
         },
       ],
     },
