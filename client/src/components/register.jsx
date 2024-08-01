@@ -75,7 +75,12 @@ const Register = () => {
             <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-blue-600 rounded-md font-sans font-medium text-lg">
               Sign In
             </button>
-            <Link to="/forgotPassword">Forgot password?</Link>
+            <Link
+              to="/forgotPassword"
+              className="animate__animated animate__zoomIn text-xl font-small font-mono underline"
+            >
+              Forgot password?
+            </Link>
           </form>
         </div>
         <div>
