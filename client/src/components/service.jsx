@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const Service = () => {
   const { id } = useParams();
@@ -9,6 +11,16 @@ const Service = () => {
     complaint: "",
     status: "",
   };
+
+  const [service, setService] = useState(initialValues);
+
+  useEffect(() => {
+    try {
+      
+    } catch (error) {
+
+    }
+  }, []);
   return (
     <main
       id="service"
