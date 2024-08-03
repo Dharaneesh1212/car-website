@@ -1,4 +1,14 @@
+import { useParams } from "react-router-dom";
+
 const Amc = () => {
+  const { id } = useParams();
+  const initialValues = {
+    personname: "",
+    carnumber: "",
+    carname: "",
+    complaint: "",
+    status: "",
+  };
   return (
     <main
       id="amc"
