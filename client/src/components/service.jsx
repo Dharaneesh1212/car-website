@@ -18,14 +18,32 @@ const Service = () => {
     const fetchService = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/create/allservice`
+          `http://localhost:8000/api/v1/create/service`
         );
         setService(response.data);
       } catch (error) {
-        console.log("error on displaying data ", error);
+        console.log("error on creating data ", error);
       }
+      fetchService();
     };
   }, []);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios.get(
+          "http://localhost:8000/api/v1/create/allService"
+        );
+        setData(result.data);
+      } catch (error) {
+        console.log("error on displaying data ", error);
+      }
+      fetchData();
+    };
+  }, []);
+
   return (
     <main
       id="service"
