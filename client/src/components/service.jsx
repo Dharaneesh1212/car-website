@@ -15,11 +15,16 @@ const Service = () => {
   const [service, setService] = useState(initialValues);
 
   useEffect(() => {
-    try {
-      
-    } catch (error) {
-
-    }
+    const fetchService = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/api/v1/create/allservice`
+        );
+        setService(response.data);
+      } catch (error) {
+        console.log("error on displaying data ", error);
+      }
+    };
   }, []);
   return (
     <main
@@ -34,6 +39,7 @@ const Service = () => {
           <input
             name="personname"
             id="service-name"
+            value={service.personname}
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Person Name"
@@ -41,6 +47,7 @@ const Service = () => {
           <input
             name="carnumber"
             id="service-number"
+            value={service.carnumber}
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Car Number"
@@ -48,6 +55,7 @@ const Service = () => {
           <input
             name="carname"
             id="service-car"
+            value={service.carname}
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Car Name"
@@ -55,6 +63,7 @@ const Service = () => {
           <input
             name="complaint"
             id="service-comp"
+            value={service.complaint}
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Complaint"
@@ -62,9 +71,10 @@ const Service = () => {
           <input
             name="status"
             id="service-status"
+            value={service.status}
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
-            placeholder="Complaint"
+            placeholder="status"
           />
         </div>
         <button
