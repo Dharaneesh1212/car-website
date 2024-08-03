@@ -10,30 +10,35 @@ const Service = () => {
       >
         <div id="sub-ones" className="flex items-center justify-center gap-4">
           <input
+            name="personname"
             id="service-name"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Person Name"
           />
           <input
+            name="carnumber"
             id="service-number"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Car Number"
           />
           <input
+            name="carname"
             id="service-car"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Car Name"
           />
           <input
+            name="complaint"
             id="service-comp"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Complaint"
           />
           <input
+            name="status"
             id="service-status"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
