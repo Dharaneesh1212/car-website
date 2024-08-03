@@ -11,30 +11,35 @@ const Amc = () => {
         <div id="sub-onea" className="flex items-center justify-center gap-4">
           <input
             id="amc-name"
+            name="personname"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Person Name"
           />
           <input
             id="amc-number"
+            name="carnumber"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Car Number"
           />
           <input
             id="amc-car"
+            name="carname"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Car Name"
           />
           <input
             id="amc-comp"
+            name="complaint"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Complaint"
           />
           <input
             id="amc-status"
+            name="status"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
             placeholder="Complaint"
