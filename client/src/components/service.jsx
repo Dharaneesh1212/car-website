@@ -38,13 +38,15 @@ const Service = () => {
         const response = await axios.get(
           `http://localhost:8000/api/v1/create/servicebyname/`
         );
-        setService(response.data);
+        console.log(response.data);
+        setService(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.log("error on creating data ", error);
+        setData([]);
       }
-      fetchService();
     };
-  }, []);
+    fetchService();
+  }, [id]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,12 +54,14 @@ const Service = () => {
         const result = await axios.get(
           "http://localhost:8000/api/v1/create/allService"
         );
-        setData(result.data);
+        console.log(result.data);
+        setData(Array.isArray(result.data) ? result.data : []);
       } catch (error) {
         console.log("error on displaying data ", error);
+        setData([]);
       }
-      fetchData();
     };
+    fetchData();
   }, []);
 
   const deleteService = async (id) => {
@@ -70,6 +74,10 @@ const Service = () => {
   };
 
   const editService = async (id) => {};
+
+  const handleChange = (e) => {
+    setService({ ...service, [e.target.name]: e.target.value });
+  };
 
   return (
     <main
@@ -89,6 +97,7 @@ const Service = () => {
               name="personname"
               id="service-name"
               value={service.personname}
+              onChange={handleChange}
               className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
               type="text"
               placeholder="Person Name"
@@ -97,6 +106,7 @@ const Service = () => {
               name="carnumber"
               id="service-number"
               value={service.carnumber}
+              onChange={handleChange}
               className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
               type="text"
               placeholder="Car Number"
@@ -105,6 +115,7 @@ const Service = () => {
               name="carname"
               id="service-car"
               value={service.carname}
+              onChange={handleChange}
               className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
               type="text"
               placeholder="Car Name"
@@ -113,6 +124,7 @@ const Service = () => {
               name="complaint"
               id="service-comp"
               value={service.complaint}
+              onChange={handleChange}
               className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
               type="text"
               placeholder="Complaint"
@@ -121,6 +133,7 @@ const Service = () => {
               name="status"
               id="service-status"
               value={service.status}
+              onChange={handleChange}
               className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
               type="text"
               placeholder="Status"
@@ -149,6 +162,29 @@ const Service = () => {
           </button>
         </div>
       </div>
+      {Array.isArray(data) &&
+        data.map((car) => (
+          <div
+            className="flex items-center justify-center bg-zinc-900 text-xl"
+            key={car._id}
+          >
+            <div className="flex items-center justify-center flex-col gap-4">
+              <h1>{car.personname}</h1>
+              <h1>{car.carnumber}</h1>
+              <h1>{car.carname}</h1>
+              <h1>{car.complaint}</h1>
+              <h1>{car.status}</h1>
+            </div>
+            <div className="flex items-center justify-center flex-col">
+              <button className="bg-green-500 text-xl px-4 py-1 rounded-md hover:bg-green-600">
+                Edit
+              </button>
+              <button className="bg-red-500 text-xl px-4 py-1 rounded-md hover:bg-red-600">
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
     </main>
   );
 };
