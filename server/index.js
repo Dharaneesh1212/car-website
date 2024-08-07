@@ -1,9 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import { UserRouter } from "./routes/userRoute.js";
+import userRouter from "./routes/userRoute.js";
 import createRoute from "./routes/serviceRoute.js";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 dotenv.config();
 const app = express();
@@ -13,10 +14,10 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 // middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(cookieParser());
 
 // Routes for authentication
-app.use("/api/user", UserRouter);
+app.use("/api/user", userRouter);
 app.use("/api/service", createRoute);
 
 mongoose
