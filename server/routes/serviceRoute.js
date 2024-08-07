@@ -1,31 +1,35 @@
 import {
-  createService,
-  updateServiceId,
-  deleteServiceId,
-  allServices,
-  serviceByName,
+  create,
+  update,
+  deleteService,
+  all,
+  serviceByUsername,
+  getAmc,
+  getServiceById,
 } from "../controller/serviceController.js";
 import express from "express";
 
 const router = express.Router();
 
-// create
-// POST => http://localhost:8000/api/v1/service
-router.post("/service", createService);
+// POST: http://localhost:8000/api/service
+router.post("/", create);
 
-// get
-// GET => http://localhost:8000/api/v1/service
-router.get("/allservice", allServices);
+// GET: http://localhost:8000/api/service/all
+router.get("/all", all);
 
-// GET => http://localhost:8000/api/v1/service
-router.get("/servicebyname/:personname", serviceByName);
+// GET: http://localhost:8000/api/service/servicebyid
+router.get("/servicebyid/:id", getServiceById);
 
-// update
-// PUT => http://localhost:8000/api/v1/service/id
-router.put("/:id", updateServiceId);
+// GET: http://localhost:8000/api/service/servicebyusername
+router.get("/servicebyname/:username", serviceByUsername);
 
-// delete
-// DELETE => http://localhost:8000/api/v1/service/id
-router.delete("/:id", deleteServiceId);
+// PUT: http://localhost:8000/api/service/
+router.put("/:id", update);
+
+// DELETE: http://localhost:8000/api/service/
+router.delete("/:id", deleteService);
+
+// GET: http://localhost:8000/api/service/amc
+router.get("/amc", getAmc);
 
 export default router;

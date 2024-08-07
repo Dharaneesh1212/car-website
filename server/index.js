@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { UserRouter } from "./routes/userRoute.js";
 import createRoute from "./routes/serviceRoute.js";
-import router from "./routes/amcServiceRoute.js";
 import cors from "cors";
 
 dotenv.config();
@@ -15,14 +14,10 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("running successfully");
-});
 
 // Routes for authentication
-app.use("/api/v1/user", UserRouter);
-app.use("/api/v1/create", createRoute);
-app.use("/api/v1/amccreate", router);
+app.use("/api/user", UserRouter);
+app.use("/api/service", createRoute);
 
 mongoose
   .connect(CONNECTION_URL)
