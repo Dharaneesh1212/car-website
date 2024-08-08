@@ -1,3 +1,5 @@
+import Service from "./service";
+
 const AdminService = () => {
   return (
     <main
@@ -54,6 +56,7 @@ const AdminService = () => {
           </button>
         </div>
       </div>
+      <Service />
     </main>
   );
 };
