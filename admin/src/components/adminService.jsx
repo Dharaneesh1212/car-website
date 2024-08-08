@@ -26,7 +26,6 @@ const AdminService = () => {
       await axios.post("http://localhost:8000/api/service", data);
       setLoading(false);
       alert("Service registered successfully");
-      // Clear form fields after successful registration
       setUsername("");
       setCarnumber("");
       setCarname("");
@@ -94,7 +93,6 @@ const AdminService = () => {
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             >
-              {/* <option >Select</option> */}
               <option value="Pending">Pending</option>
               <option value="On-Process">On-Process</option>
               <option value="Completed">Completed</option>
@@ -106,7 +104,6 @@ const AdminService = () => {
               value={amc.toString()}
               onChange={(e) => setAmc(e.target.value === "true")}
             >
-              {/* <option disabled>Select</option> */}
               <option value="false">No-AMC</option>
               <option value="true">AMC</option>
             </select>

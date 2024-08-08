@@ -4,7 +4,7 @@ import axios from "axios";
 
 const EditService = () => {
   const { id } = useParams();
-  const navigate = useNavigate(); // Initialize the useNavigate hook
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [carnumber, setCarnumber] = useState("");
@@ -26,7 +26,7 @@ const EditService = () => {
         setCarname(data.carname);
         setComplaint(data.complaint);
         setStatus(data.status);
-        setAmc(data.amc); // Populate AMC field if it exists
+        setAmc(data.amc);
         setLoading(false);
       })
       .catch((error) => {
@@ -50,8 +50,8 @@ const EditService = () => {
         `http://localhost:8000/api/service/${id}`,
         updatedService
       );
-      window.alert("Service updated successfully"); // Display alert
-      navigate("/adminService"); // Navigate to /adminService after update
+      window.alert("Service updated successfully");
+      navigate("/adminService");
     } catch (error) {
       console.log(error);
     }

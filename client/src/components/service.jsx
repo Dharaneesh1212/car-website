@@ -4,6 +4,8 @@ import axios from "axios";
 const Service = () => {
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [filteredService, setFilteredService] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -11,14 +13,30 @@ const Service = () => {
       .get("http://localhost:8000/api/service/service")
       .then((res) => {
         setService(res.data.data);
+        setFilteredService(res.data.data);
         setLoading(false);
-        console.log(res.data.data);
       })
       .catch((error) => {
         console.log(error);
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      const query = searchQuery.toLowerCase();
+      const results = service.filter((item) =>
+        item.username.toLowerCase().includes(query)
+      );
+      setFilteredService(results);
+    }, 500); 
+
+    return () => clearTimeout(timeoutId);
+  }, [searchQuery, service]);
+
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <main
@@ -34,18 +52,16 @@ const Service = () => {
             id="service-search"
             className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
             type="text"
-            placeholder="Search By Name "
+            placeholder="Search By Name"
+            value={searchQuery}
+            onChange={handleInputChange}
           />
-          <button
-            id="service-btn"
-            className="animate__animated animate__zoomIn bg-red-700 text-xl text-white outline-none p-2 rounded-md h-[3rem] w-[10rem]"
-          >
-            Search
-          </button>
         </div>
       </div>
-      {service.length > 0 ? (
-        service.map((item) => (
+      {loading ? (
+        <p className="text-white">Loading...</p>
+      ) : filteredService.length > 0 ? (
+        filteredService.map((item) => (
           <div
             key={item._id}
             className="text-white flex items-center justify-center gap-10 text-xl h-12 rounded-lg m-4 p-4 bg-zinc-700 capitalize"
@@ -63,17 +79,17 @@ const Service = () => {
               <span className="text-red-500 font-medium">{item.carnumber}</span>
             </p>
             <p>
-              complaint:{" "}
+              Complaint:{" "}
               <span className="text-red-500 font-medium">{item.complaint}</span>
             </p>
             <p>
-              status:{" "}
+              Status:{" "}
               <span className="text-red-500 font-medium">{item.status}</span>
             </p>
           </div>
         ))
       ) : (
-        <p>No services found</p>
+        <p className="text-white">No services found</p>
       )}
     </main>
   );
