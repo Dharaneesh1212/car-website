@@ -1,50 +1,23 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const Service = () => {
-  const { id } = useParams();
-  const initialValues = {
-    personname: "",
-    carnumber: "",
-    carname: "",
-    complaint: "",
-    status: "",
-  };
-
-  const [service, setService] = useState(initialValues);
-  const [data, setData] = useState([]);
+  const [service, setService] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchService = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8000/api/v1/create/servicebyname/`
-        );
-        console.log(response.data);
-        setService(Array.isArray(response.data) ? response.data : []);
-      } catch (error) {
-        console.log("error on creating data ", error);
-        setData([]);
-      }
-    };
-    fetchService();
-  }, [id]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await axios.get(
-          "http://localhost:8000/api/v1/create/allService"
-        );
-        console.log(result.data);
-        setData(Array.isArray(result.data) ? result.data : []);
-      } catch (error) {
-        console.log("error on displaying data ", error);
-        setData([]);
-      }
-    };
-    fetchData();
+    setLoading(true);
+    axios
+      .get("http://localhost:8000/api/service/all")
+      .then((res) => {
+        setService(res.data.data);
+        setLoading(false);
+        console.log(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -71,29 +44,37 @@ const Service = () => {
           </button>
         </div>
       </div>
-      {Array.isArray(data) &&
-        data.map((car) => (
+      {service.length > 0 ? (
+        service.map((item) => (
           <div
-            className="flex items-center justify-center bg-zinc-900 text-xl"
-            key={car._id}
+            key={item._id}
+            className="text-white flex items-center justify-center gap-10 text-xl h-12 rounded-lg m-4 p-4 bg-zinc-700 capitalize"
           >
-            <div className="flex items-center justify-center flex-col gap-4">
-              <h1>{car.personname}</h1>
-              <h1>{car.carnumber}</h1>
-              <h1>{car.carname}</h1>
-              <h1>{car.complaint}</h1>
-              <h1>{car.status}</h1>
-            </div>
-            <div className="flex items-center justify-center flex-col">
-              <button className="bg-green-500 text-xl px-4 py-1 rounded-md hover:bg-green-600">
-                Edit
-              </button>
-              <button className="bg-red-500 text-xl px-4 py-1 rounded-md hover:bg-red-600">
-                Delete
-              </button>
-            </div>
+            <p>
+              User name:{" "}
+              <span className="text-red-500 font-medium">{item.username}</span>
+            </p>
+            <p>
+              Car name:{" "}
+              <span className="text-red-500 font-medium">{item.carname}</span>
+            </p>
+            <p>
+              Car number:{" "}
+              <span className="text-red-500 font-medium">{item.carnumber}</span>
+            </p>
+            <p>
+              complaint:{" "}
+              <span className="text-red-500 font-medium">{item.complaint}</span>
+            </p>
+            <p>
+              status:{" "}
+              <span className="text-red-500 font-medium">{item.status}</span>
+            </p>
           </div>
-        ))}
+        ))
+      ) : (
+        <p>No services found</p>
+      )}
     </main>
   );
 };

@@ -62,7 +62,7 @@ const Service = () => {
             <p>
               AMC:{" "}
               <span className="text-sky-400 font-medium">
-                {item.amc ? "True" : "False"}
+                {item.amc ? "AMC" : "No-AMC"}
               </span>
             </p>
             <button className="text-green-500 flex items-center justify-center">
