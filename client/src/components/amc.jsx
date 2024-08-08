@@ -41,16 +41,16 @@ const Amc = () => {
   return (
     <main
       id="amc"
-      className="bg-black w-screen h-screen flex items-center flex-col justify-start pt-28 gap-4"
+      className="bg-black w-screen min-h-screen flex flex-col items-center justify-start pt-28 gap-4"
     >
       <div
         id="main-amc"
-        className="flex items-center justify-start flex-col gap-10 w-full bg-black"
+        className="flex flex-col items-center justify-center gap-10 w-full px-4"
       >
-        <div id="sub-twoa" className="flex items-center justify-center gap-4">
+        <div id="sub-twoa" className="flex items-center justify-center gap-4 w-full max-w-md">
           <input
             id="amc-search"
-            className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+            className="animate__animated animate__zoomIn rounded-md p-2 text-lg sm:text-xl outline-none text-white bg-zinc-700 w-full"
             type="text"
             placeholder="Search By Name"
             value={searchQuery}
@@ -58,39 +58,47 @@ const Amc = () => {
           />
         </div>
       </div>
-      {loading ? (
-        <p className="text-white">Loading...</p>
-      ) : filteredAmc.length > 0 ? (
-        filteredAmc.map((item) => (
-          <div
-            key={item._id}
-            className="text-white flex items-center justify-center gap-10 text-xl h-12 rounded-lg m-4 p-4 bg-zinc-700 capitalize"
-          >
-            <p>
-              User name:{" "}
-              <span className="text-red-500 font-medium">{item.username}</span>
-            </p>
-            <p>
-              Car name:{" "}
-              <span className="text-red-500 font-medium">{item.carname}</span>
-            </p>
-            <p>
-              Car number:{" "}
-              <span className="text-red-500 font-medium">{item.carnumber}</span>
-            </p>
-            <p>
-              Complaint:{" "}
-              <span className="text-red-500 font-medium">{item.complaint}</span>
-            </p>
-            <p>
-              Status:{" "}
-              <span className="text-red-500 font-medium">{item.status}</span>
-            </p>
-          </div>
-        ))
-      ) : (
-        <p className="text-white">No services found</p>
-      )}
+      <div className="flex-1 w-full flex flex-col items-center px-4 sm:px-0">
+        {loading ? (
+          <p className="text-white">Loading...</p>
+        ) : filteredAmc.length > 0 ? (
+          filteredAmc.map((item) => (
+            <div
+              key={item._id}
+              className="text-white flex flex-col sm:flex-row items-start sm:items-center justify-start sm:justify-between gap-4 sm:gap-10 text-lg sm:text-xl rounded-lg m-4 p-4 bg-zinc-700 capitalize w-full max-w-md sm:max-w-4xl"
+            >
+              <p>
+                User name:{" "}
+                <span className="text-red-500 font-medium">
+                  {item.username}
+                </span>
+              </p>
+              <p>
+                Car name:{" "}
+                <span className="text-red-500 font-medium">{item.carname}</span>
+              </p>
+              <p>
+                Car number:{" "}
+                <span className="text-red-500 font-medium">
+                  {item.carnumber}
+                </span>
+              </p>
+              <p>
+                Complaint:{" "}
+                <span className="text-red-500 font-medium">
+                  {item.complaint}
+                </span>
+              </p>
+              <p>
+                Status:{" "}
+                <span className="text-red-500 font-medium">{item.status}</span>
+              </p>
+            </div>
+          ))
+        ) : (
+          <p className="text-white">No services found</p>
+        )}
+      </div>
     </main>
   );
 };
