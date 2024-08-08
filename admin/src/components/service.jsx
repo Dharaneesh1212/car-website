@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 
 const Service = () => {
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -14,7 +17,6 @@ const Service = () => {
       .then((res) => {
         setService(res.data.data);
         setLoading(false);
-        console.log(res.data.data);
       })
       .catch((error) => {
         console.log(error);
@@ -25,6 +27,7 @@ const Service = () => {
   const handleDelete = async (id) => {
     try {
       axios.delete(`http://localhost:8000/api/service/${id}`);
+      window.confirm("Do you want to delete the service")
       setService(service.filter((item) => item._id !== id));
     } catch (error) {
       console.log(error);
@@ -65,9 +68,11 @@ const Service = () => {
                 {item.amc ? "AMC" : "No-AMC"}
               </span>
             </p>
-            <button className="text-green-500 flex items-center justify-center">
-              <FaEdit />
-            </button>
+            <Link to={`/editservice/${item._id}`}>
+              <button className="text-green-500 flex items-center justify-center">
+                <FaEdit />
+              </button>
+            </Link>
             <button
               onClick={() => handleDelete(item._id)}
               className="text-red-500 flex items-center justify-center"

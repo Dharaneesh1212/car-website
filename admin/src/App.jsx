@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AdminAmc from "./components/adminAmc";
 import AdminService from "./components/adminService";
 import Root from "./components/root";
+import EditService from "./components/editService";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -14,8 +14,8 @@ const App = () => {
           element: <AdminService />,
         },
         {
-          path: "/adminAmc",
-          element: <AdminAmc />,
+          path: "/editservice/:id",
+          element: <EditService />,
         },
       ],
     },
