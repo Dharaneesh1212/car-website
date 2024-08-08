@@ -1,14 +1,25 @@
-import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Amc = () => {
-  const { id } = useParams();
-  const initialValues = {
-    personname: "",
-    carnumber: "",
-    carname: "",
-    complaint: "",
-    status: "",
-  };
+  const [amc, setAmc] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    axios
+      .get("http://localhost:8000/api/service/amc")
+      .then((res) => {
+        setAmc(res.data.data);
+        setLoading(false);
+        console.log(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <main
       id="amc"
@@ -33,6 +44,37 @@ const Amc = () => {
           </button>
         </div>
       </div>
+      {amc.length > 0 ? (
+        amc.map((item) => (
+          <div
+            key={item._id}
+            className="text-white flex items-center justify-center gap-10 text-xl h-12 rounded-lg m-4 p-4 bg-zinc-700 capitalize"
+          >
+            <p>
+              User name:{" "}
+              <span className="text-red-500 font-medium">{item.username}</span>
+            </p>
+            <p>
+              Car name:{" "}
+              <span className="text-red-500 font-medium">{item.carname}</span>
+            </p>
+            <p>
+              Car number:{" "}
+              <span className="text-red-500 font-medium">{item.carnumber}</span>
+            </p>
+            <p>
+              complaint:{" "}
+              <span className="text-red-500 font-medium">{item.complaint}</span>
+            </p>
+            <p>
+              status:{" "}
+              <span className="text-red-500 font-medium">{item.status}</span>
+            </p>
+          </div>
+        ))
+      ) : (
+        <p>No services found</p>
+      )}
     </main>
   );
 };
