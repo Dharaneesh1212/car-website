@@ -35,12 +35,12 @@ const Service = () => {
   };
 
   return (
-    <main>
+    <main className="bg-black h-fit w-screen p-4">
       {service.length > 0 ? (
         service.map((item) => (
           <div
             key={item._id}
-            className="text-white flex items-center justify-center gap-10 text-lg h-12 rounded-lg m-4 p-4 bg-zinc-700 capitalize"
+            className="text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-4 text-base md:text-lg rounded-lg p-4 mb-4 bg-zinc-700 capitalize"
           >
             <p>
               User name:{" "}
@@ -55,11 +55,11 @@ const Service = () => {
               <span className="text-sky-400 font-medium">{item.carname}</span>
             </p>
             <p>
-              complaint:{" "}
+              Complaint:{" "}
               <span className="text-sky-400 font-medium">{item.complaint}</span>
             </p>
             <p>
-              status:{" "}
+              Status:{" "}
               <span className="text-sky-400 font-medium">{item.status}</span>
             </p>
             <p>
@@ -68,21 +68,23 @@ const Service = () => {
                 {item.amc ? "AMC" : "No-AMC"}
               </span>
             </p>
-            <Link to={`/editservice/${item._id}`}>
-              <button className="text-green-500 flex items-center justify-center">
-                <FaEdit />
+            <div className="flex gap-2">
+              <Link to={`/editservice/${item._id}`}>
+                <button className="text-green-500 flex items-center justify-center">
+                  <FaEdit />
+                </button>
+              </Link>
+              <button
+                onClick={() => handleDelete(item._id)}
+                className="text-red-500 flex items-center justify-center"
+              >
+                <MdDelete />
               </button>
-            </Link>
-            <button
-              onClick={() => handleDelete(item._id)}
-              className="text-red-500 flex items-center justify-center"
-            >
-              <MdDelete />
-            </button>
+            </div>
           </div>
         ))
       ) : (
-        <p>No services found</p>
+        <p className="text-white text-center">No services found</p>
       )}
     </main>
   );

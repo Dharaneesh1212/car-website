@@ -48,12 +48,12 @@ const AdminService = () => {
         id="main-service"
         className="flex items-center justify-center flex-col gap-10 w-full bg-black"
       >
-        <div className="flex items-center justify-center flex-col gap-4">
-          <div id="sub-ones" className="flex items-center justify-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <div id="sub-ones" className="flex flex-wrap items-center justify-center gap-4 w-full md:w-auto bg-black">
             <input
               name="username"
               id="service-name"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
               type="text"
               placeholder="User Name"
               value={username}
@@ -62,7 +62,7 @@ const AdminService = () => {
             <input
               name="carnumber"
               id="service-number"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
               type="text"
               placeholder="Car Number"
               value={carnumber}
@@ -71,7 +71,7 @@ const AdminService = () => {
             <input
               name="carname"
               id="service-car"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
               type="text"
               placeholder="Car Name"
               value={carname}
@@ -80,7 +80,7 @@ const AdminService = () => {
             <input
               name="complaint"
               id="service-comp"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
               type="text"
               placeholder="Complaint"
               value={complaint}
@@ -89,7 +89,7 @@ const AdminService = () => {
             <select
               name="status"
               id="service-status"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             >
@@ -100,7 +100,7 @@ const AdminService = () => {
             <select
               name="amc"
               id="service-amc"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
               value={amc.toString()}
               onChange={(e) => setAmc(e.target.value === "true")}
             >
@@ -110,7 +110,7 @@ const AdminService = () => {
           </div>
           <button
             id="service-reg"
-            className="animate__animated animate__zoomIn bg-red-700 text-xl text-white outline-none p-2 rounded-md h-[3rem] w-[10rem]"
+            className="animate__animated animate__zoomIn bg-red-700 text-lg md:text-xl text-white outline-none p-2 rounded-md h-[3rem] w-full md:w-[10rem]"
             onClick={handleRegister}
           >
             Register
