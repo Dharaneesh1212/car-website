@@ -6,6 +6,7 @@ import {
   serviceByUsername,
   getAmc,
   getServiceById,
+  getService,
 } from "../controller/serviceController.js";
 import express from "express";
 
@@ -31,5 +32,8 @@ router.delete("/:id", deleteService);
 
 // GET: http://localhost:8000/api/service/amc
 router.get("/amc", getAmc);
+
+// GET: http://localhost:8000/api/service/service
+router.get("/service", getService);
 
 export default router;

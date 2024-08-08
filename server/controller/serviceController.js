@@ -87,3 +87,13 @@ export const getAmc = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+// Get services
+export const getService = async (req, res) => {
+  try {
+    const amcServices = await Service.find({ amc: false });
+    res.status(200).json({ success: true, data: amcServices });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

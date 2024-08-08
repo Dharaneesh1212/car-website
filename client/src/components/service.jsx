@@ -8,7 +8,7 @@ const Service = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/service/all")
+      .get("http://localhost:8000/api/service/service")
       .then((res) => {
         setService(res.data.data);
         setLoading(false);
