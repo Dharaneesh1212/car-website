@@ -22,6 +22,15 @@ const Service = () => {
       });
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      axios.delete(`http://localhost:8000/api/service/${id}`);
+      setService(service.filter((item) => item._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <main>
       {service.length > 0 ? (
@@ -59,7 +68,10 @@ const Service = () => {
             <button className="text-green-500 flex items-center justify-center">
               <FaEdit />
             </button>
-            <button className="text-red-500 flex items-center justify-center">
+            <button
+              onClick={() => handleDelete(item._id)}
+              className="text-red-500 flex items-center justify-center"
+            >
               <MdDelete />
             </button>
           </div>
