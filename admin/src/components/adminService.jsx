@@ -13,11 +13,11 @@ const AdminService = () => {
         <div className="flex items-center justify-center flex-col gap-4">
           <div id="sub-ones" className="flex items-center justify-center gap-4">
             <input
-              name="personname"
+              name="username"
               id="service-name"
               className="animate__animated animate__zoomIn rounded-md p-2 text-xl outline-none text-white bg-zinc-700"
               type="text"
-              placeholder="Person Name"
+              placeholder="User Name"
             />
             <input
               name="carnumber"

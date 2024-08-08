@@ -44,12 +44,12 @@ const Service = () => {
               <span className="text-sky-400 font-medium">{item.username}</span>
             </p>
             <p>
-              Car name:{" "}
-              <span className="text-sky-400 font-medium">{item.carname}</span>
-            </p>
-            <p>
               Car number:{" "}
               <span className="text-sky-400 font-medium">{item.carnumber}</span>
+            </p>
+            <p>
+              Car name:{" "}
+              <span className="text-sky-400 font-medium">{item.carname}</span>
             </p>
             <p>
               complaint:{" "}
