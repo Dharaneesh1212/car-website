@@ -30,7 +30,7 @@ const AdminService = () => {
       setCarnumber("");
       setCarname("");
       setComplaint("");
-      setStatus("");
+      setStatus("pending");
       setAmc(false);
     } catch (error) {
       setLoading(false);
@@ -42,18 +42,21 @@ const AdminService = () => {
   return (
     <main
       id="service"
-      className="bg-black w-screen h-screen flex items-center flex-col justify-start pt-28 gap-4"
+      className="bg-black w-screen min-h-screen flex items-center flex-col justify-start pt-28 gap-4"
     >
       <div
         id="main-service"
-        className="flex items-center justify-center flex-col gap-10 w-full bg-black"
+        className="flex items-center justify-center flex-col gap-10 w-full bg-black px-4"
       >
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <div id="sub-ones" className="flex flex-wrap items-center justify-center gap-4 w-full md:w-auto bg-black">
+        <div className="flex flex-wrap items-center justify-center gap-4 w-full">
+          <div
+            id="sub-ones"
+            className="flex flex-wrap items-center justify-center gap-4 w-full md:w-auto bg-black"
+          >
             <input
               name="username"
               id="service-name"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-[15rem]"
               type="text"
               placeholder="User Name"
               value={username}
@@ -62,7 +65,7 @@ const AdminService = () => {
             <input
               name="carnumber"
               id="service-number"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-[15rem]"
               type="text"
               placeholder="Car Number"
               value={carnumber}
@@ -71,7 +74,7 @@ const AdminService = () => {
             <input
               name="carname"
               id="service-car"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-[15rem]"
               type="text"
               placeholder="Car Name"
               value={carname}
@@ -80,7 +83,7 @@ const AdminService = () => {
             <input
               name="complaint"
               id="service-comp"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-[15rem]"
               type="text"
               placeholder="Complaint"
               value={complaint}
@@ -89,7 +92,7 @@ const AdminService = () => {
             <select
               name="status"
               id="service-status"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-[15rem]"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             >
@@ -100,7 +103,7 @@ const AdminService = () => {
             <select
               name="amc"
               id="service-amc"
-              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-auto"
+              className="animate__animated animate__zoomIn rounded-md p-2 text-lg md:text-xl outline-none text-white bg-zinc-700 w-full md:w-[15rem]"
               value={amc.toString()}
               onChange={(e) => setAmc(e.target.value === "true")}
             >
