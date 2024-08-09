@@ -44,27 +44,27 @@ const Service = () => {
           >
             <p>
               User name:{" "}
-              <span className="text-sky-400 font-medium">{item.username}</span>
+              <span className="text-sky-400 font-medium animate__animated animate__zoomIn">{item.username}</span>
             </p>
             <p>
               Car number:{" "}
-              <span className="text-sky-400 font-medium">{item.carnumber}</span>
+              <span className="text-sky-400 font-medium animate__animated animate__zoomIn">{item.carnumber}</span>
             </p>
             <p>
               Car name:{" "}
-              <span className="text-sky-400 font-medium">{item.carname}</span>
+              <span className="text-sky-400 font-medium animate__animated animate__zoomIn">{item.carname}</span>
             </p>
             <p>
               Complaint:{" "}
-              <span className="text-sky-400 font-medium">{item.complaint}</span>
+              <span className="text-sky-400 font-medium animate__animated animate__zoomIn">{item.complaint}</span>
             </p>
             <p>
               Status:{" "}
-              <span className="text-sky-400 font-medium">{item.status}</span>
+              <span className="text-sky-400 font-medium animate__animated animate__zoomIn">{item.status}</span>
             </p>
             <p>
               AMC:{" "}
-              <span className="text-sky-400 font-medium">
+              <span className="text-sky-400 font-medium animate__animated animate__zoomIn">
                 {item.amc ? "AMC" : "No-AMC"}
               </span>
             </p>
