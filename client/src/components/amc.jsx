@@ -58,7 +58,7 @@ const Amc = () => {
           />
         </div>
       </div>
-      <div className="flex-1 w-full flex flex-col items-center px-4 sm:px-0">
+      <div className="flex-1 w-full flex flex-col items-center px-4 sm:px-0 ">
         {loading ? (
           <p className="text-white">Loading...</p>
         ) : filteredAmc.length > 0 ? (
@@ -69,29 +69,29 @@ const Amc = () => {
             >
               <p>
                 User name:{" "}
-                <span className="text-red-500 font-medium">
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
                   {item.username}
                 </span>
               </p>
               <p>
                 Car name:{" "}
-                <span className="text-red-500 font-medium">{item.carname}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.carname}</span>
               </p>
               <p>
                 Car number:{" "}
-                <span className="text-red-500 font-medium">
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
                   {item.carnumber}
                 </span>
               </p>
               <p>
                 Complaint:{" "}
-                <span className="text-red-500 font-medium">
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
                   {item.complaint}
                 </span>
               </p>
               <p>
                 Status:{" "}
-                <span className="text-red-500 font-medium">{item.status}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.status}</span>
               </p>
             </div>
           ))

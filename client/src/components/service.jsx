@@ -69,23 +69,23 @@ const Service = () => {
             >
               <p>
                 User name:{" "}
-                <span className="text-red-500 font-medium">{item.username}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.username}</span>
               </p>
               <p>
                 Car name:{" "}
-                <span className="text-red-500 font-medium">{item.carname}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.carname}</span>
               </p>
               <p>
                 Car number:{" "}
-                <span className="text-red-500 font-medium">{item.carnumber}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.carnumber}</span>
               </p>
               <p>
                 Complaint:{" "}
-                <span className="text-red-500 font-medium">{item.complaint}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.complaint}</span>
               </p>
               <p>
                 Status:{" "}
-                <span className="text-red-500 font-medium">{item.status}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.status}</span>
               </p>
             </div>
           ))
