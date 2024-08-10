@@ -31,7 +31,16 @@ const Register = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        if (
+          error.response &&
+          error.response.data.message === "User already exists"
+        ) {
+          alert(
+            "User already exists. Please sign in or use another email to register."
+          );
+        } else {
+          console.log(error);
+        }
       });
   };
 
@@ -44,8 +53,8 @@ const Register = () => {
     e.preventDefault();
     axios
       .post("http://localhost:8000/api/user/login", {
-        email:loginemail,
-        password:loginpassword,
+        email: loginemail,
+        password: loginpassword,
       })
       .then((response) => {
         if (response.data.status) {
