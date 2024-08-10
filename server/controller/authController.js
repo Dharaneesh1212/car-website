@@ -1,6 +1,7 @@
 import { User } from "../models/userModels.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import nodemailer from "nodemailer";
 
 // signup
 export const signup = async (req, res) => {
@@ -59,5 +60,45 @@ export const signin = async (req, res) => {
       .json({ status: true, message: "Logged in successfully" });
   } catch (error) {
     return res.status(500).json({ status: false, message: error.message });
+  }
+};
+
+// forgotpassword
+export const forgotpassword = async (req, res) => {
+  const { email } = req.body;
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.json({ message: "user not registered" });
+    }
+
+    const token = jwt.sign({ id: user._id }, process.env.KEY, {
+      expiresIn: "5m",
+    });
+
+    var transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "dharun12122002@gmail.com", //your email id
+        pass: "crlg rucc xngv wsyg",
+      },
+    });
+
+    var mailOptions = {
+      from: "dharun12122002@gmail.com", //your email id
+      to: email,
+      subject: "Reset Password",
+      text: `http://localhost:5173/resetPassword/${token}`,
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        return res.json({ message: "error sending email" });
+      } else {
+        return res.json({ status: true, message: "email sent successfully" });
+      }
+    });
+  } catch (error) {
+    console.log(error);
   }
 };
