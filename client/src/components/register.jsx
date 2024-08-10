@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [activeTab, setActiveTab] = useState("sign-up");
@@ -7,6 +9,55 @@ const Register = () => {
   const handleTabToggle = () => {
     setActiveTab(activeTab === "sign-up" ? "sign-in" : "sign-up");
   };
+
+  const navigate = useNavigate();
+
+  // Signup functionalities
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/user/register", {
+        username,
+        email,
+        password,
+      })
+      .then((response) => {
+        if (response.data.status) {
+          alert("user created successfully , Now please login");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  // Signin functionalities
+  const [loginemail, setLoginemail] = useState("");
+  const [loginpassword, setLoginpassword] = useState("");
+
+  axios.defaults.withCredentials = true;
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:8000/api/user/login", {
+        email:loginemail,
+        password:loginpassword,
+      })
+      .then((response) => {
+        if (response.data.status) {
+          alert("Logged in successfully");
+          navigate("/service");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <main
       id="register"
@@ -21,6 +72,7 @@ const Register = () => {
           <form
             id="signupform"
             className="flex items-center justify-center flex-col gap-8 w-[25rem]"
+            onSubmit={handleSubmit}
           >
             <h1 className="animate__animated animate__zoomIn text-2xl font-semibold font-mono">
               Create Account
@@ -29,18 +81,21 @@ const Register = () => {
               id="inputone"
               type="text"
               placeholder="Name"
+              onChange={(e) => setUsername(e.target.value)}
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
               id="inputtwo"
               type="email"
               placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
               id="inputthree"
               type="password"
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-red-600 rounded-md font-sans font-medium text-lg">
@@ -56,6 +111,7 @@ const Register = () => {
           <form
             id="signinform"
             className="flex items-center justify-center flex-col gap-10 w-[25rem]"
+            onSubmit={handleLoginSubmit}
           >
             <h1 className="animate__animated animate__zoomIn text-2xl font-semibold font-mono">
               Sign In
@@ -64,12 +120,14 @@ const Register = () => {
               id="inputfour"
               type="email"
               placeholder="Email"
+              onChange={(e) => setLoginemail(e.target.value)}
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <input
               id="inputfive"
               type="password"
               placeholder="Password"
+              onChange={(e) => setLoginpassword(e.target.value)}
               className="animate__animated animate__zoomIn h-8 w-72 bg-zinc-600 p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
             <button className="animate__animated animate__zoomIn flex items-center justify-center h-10 w-[10rem] bg-blue-600 rounded-md font-sans font-medium text-lg">
