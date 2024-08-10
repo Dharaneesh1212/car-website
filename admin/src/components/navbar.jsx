@@ -2,7 +2,7 @@ const Navbar = () => {
   return (
     <main
       id="navbar"
-      className="animate__animated animate__zoomIn w-screen h-[5rem] fixed flex items-center justify-between p-10 z-10"
+      className="animate__animated animate__zoomIn w-screen h-[5rem] bg-black fixed flex items-center justify-between p-10 z-10"
     >
       <div className="font-semibold text-xl text-white">
         <h1>
