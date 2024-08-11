@@ -4,6 +4,7 @@ import {
   signin,
   forgotpassword,
   resetpassword,
+  verifyuser,
 } from "../controller/authController.js";
 
 const router = express.Router();
@@ -19,5 +20,8 @@ router.post("/forgotpassword", forgotpassword);
 
 // POST => http://localhost:8000/api/user/forgotpassword
 router.post("/resetpassword/:token", resetpassword);
+
+// GET => http://localhost:8000/api/user/verify
+router.get("/verify", verifyuser);
 
 export default router;

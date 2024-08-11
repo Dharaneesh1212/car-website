@@ -1,11 +1,28 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Amc = () => {
   const [amc, setAmc] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredAmc, setFilteredAmc] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/user/verify", { withCredentials: true })
+      .then((res) => {
+        if (!res.data.status) {
+          navigate("/register");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/register");
+      });
+  }, [navigate]);
 
   useEffect(() => {
     setLoading(true);
@@ -47,7 +64,10 @@ const Amc = () => {
         id="main-amc"
         className="flex flex-col items-center justify-center gap-10 w-full px-4"
       >
-        <div id="sub-twoa" className="flex items-center justify-center gap-4 w-full max-w-md">
+        <div
+          id="sub-twoa"
+          className="flex items-center justify-center gap-4 w-full max-w-md"
+        >
           <input
             id="amc-search"
             className="animate__animated animate__zoomIn rounded-md p-2 text-lg sm:text-xl outline-none text-white bg-zinc-700 w-full"
@@ -75,7 +95,9 @@ const Amc = () => {
               </p>
               <p>
                 Car name:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.carname}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.carname}
+                </span>
               </p>
               <p>
                 Car number:{" "}
@@ -91,7 +113,9 @@ const Amc = () => {
               </p>
               <p>
                 Status:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.status}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.status}
+                </span>
               </p>
             </div>
           ))

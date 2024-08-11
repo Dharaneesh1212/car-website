@@ -103,6 +103,7 @@ export const forgotpassword = async (req, res) => {
   }
 };
 
+// reset password
 export const resetpassword = async (req, res) => {
   const { token } = req.params;
   const { password } = req.body;
@@ -112,6 +113,20 @@ export const resetpassword = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, 10);
     await User.findByIdAndUpdate({ _id: id }, { password: hashPassword });
     return res.json({ status: true, message: "updated password successfully" });
+  } catch (error) {
+    return res.json({ status: false, message: error.message });
+  }
+};
+
+// verify
+export const verifyuser = async (req, res) => {
+  try {
+    const token = req.cookies.token;
+    if (!token) {
+      return res.json({ status: false, message: "no token" });
+    }
+    const verify = await jwt.verify(token, process.env.KEY);
+    return res.json({ status: true, message: "User verified successfully" });
   } catch (error) {
     return res.json({ status: false, message: error.message });
   }

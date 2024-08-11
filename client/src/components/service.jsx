@@ -1,11 +1,28 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Service = () => {
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredService, setFilteredService] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/api/user/verify", { withCredentials: true })
+      .then((res) => {
+        if (!res.data.status) {
+          navigate("/register");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        navigate("/register");
+      });
+  }, [navigate]);
 
   useEffect(() => {
     setLoading(true);
@@ -47,7 +64,10 @@ const Service = () => {
         id="main-service"
         className="flex flex-col items-center justify-center gap-10 w-full px-4"
       >
-        <div id="sub-twos" className="flex items-center justify-center gap-4 w-full max-w-md">
+        <div
+          id="sub-twos"
+          className="flex items-center justify-center gap-4 w-full max-w-md"
+        >
           <input
             id="service-search"
             className="animate__animated animate__zoomIn rounded-md p-2 text-lg sm:text-xl outline-none text-white bg-zinc-700 w-full"
@@ -69,23 +89,33 @@ const Service = () => {
             >
               <p>
                 User name:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.username}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.username}
+                </span>
               </p>
               <p>
                 Car name:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.carname}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.carname}
+                </span>
               </p>
               <p>
                 Car number:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.carnumber}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.carnumber}
+                </span>
               </p>
               <p>
                 Complaint:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.complaint}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.complaint}
+                </span>
               </p>
               <p>
                 Status:{" "}
-                <span className="text-red-500 font-medium animate__animated animate__zoomIn">{item.status}</span>
+                <span className="text-red-500 font-medium animate__animated animate__zoomIn">
+                  {item.status}
+                </span>
               </p>
             </div>
           ))
