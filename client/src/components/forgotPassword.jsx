@@ -14,6 +14,7 @@ const ForgotPassword = () => {
         if (response.data.status) {
           alert("Check your email for resetting password link");
         }
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);

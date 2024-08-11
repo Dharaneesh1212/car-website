@@ -33,7 +33,7 @@ const ResetPassword = () => {
       >
         <div className="flex items-center justify-center">
           <form
-            onClick={handleSubmit}
+            onSubmit={handleSubmit}
             className="flex items-center justify-center flex-col gap-8 w-[25rem]"
           >
             <h1 className="text-2xl font-semibold font-mono text-white">
@@ -45,7 +45,10 @@ const ResetPassword = () => {
               onChange={(e) => setPassword(e.target.value)}
               className="h-8 w-72 bg-zinc-600 text-white p-1 rounded-md font-sans font-medium text-lg outline-none"
             />
-            <button className="flex items-center justify-center h-10 w-[10rem] bg-blue-600 rounded-md font-sans font-medium text-lg">
+            <button
+              type="submit"
+              className="flex items-center justify-center h-10 w-[10rem] bg-blue-600 rounded-md font-sans font-medium text-lg"
+            >
               Reset
             </button>
           </form>
