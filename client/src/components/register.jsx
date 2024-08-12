@@ -63,7 +63,26 @@ const Register = () => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        if (error.response) {
+          const errorMessage = error.response.data.message;
+
+          if (errorMessage === "User not registered") {
+            alert("User not registered. Please sign up first.");
+          } else if (errorMessage === "Password is incorrect") {
+            alert("Password is incorrect. Please try again.");
+          } else {
+            alert("An error occurred. Please try again.");
+          }
+
+          console.log("Error Response Data:", error.response.data);
+          console.log("Error Response Status:", error.response.status);
+          console.log("Error Response Headers:", error.response.headers);
+        } else if (error.request) {
+          console.log("Error Request:", error.request);
+        } else {
+          console.log("Error Message:", error.message);
+        }
+        console.log("Error Config:", error.config);
       });
   };
 
