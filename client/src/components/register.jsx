@@ -27,7 +27,11 @@ const Register = () => {
       })
       .then((response) => {
         if (response.data.status) {
-          alert("user created successfully , Now please login");
+          alert("user created successfully , Now please Signin");
+          setUsername("");
+          setEmail("");
+          setPassword("");
+          handleTabToggle();
         }
       })
       .catch((error) => {
@@ -60,6 +64,8 @@ const Register = () => {
         if (response.data.status) {
           alert("Logged in successfully");
           navigate("/service");
+          setLoginemail("");
+          setLoginpassword("");
         }
       })
       .catch((error) => {
