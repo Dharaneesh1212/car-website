@@ -14,7 +14,7 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 // middleware
 app.use(express.json());
 app.use(cors({
-  origin:["http://localhost:5173","http://localhost:5174"],
+  origin:"http://localhost:5173",
   credentials:true
 }));
 app.use(cookieParser());
