@@ -55,40 +55,56 @@ const Register = () => {
   axios.defaults.withCredentials = true;
   const handleLoginSubmit = (e) => {
     e.preventDefault();
+
     axios
-      .post("http://localhost:8000/api/user/login", {
-        email: loginemail,
-        password: loginpassword,
-      })
+      .post(
+        "http://localhost:8000/api/user/login",
+        {
+          email: loginemail,
+          password: loginpassword,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
         if (response.data.status) {
           alert("Logged in successfully");
+          localStorage.setItem("token", response.data.token);
           navigate("/service");
           setLoginemail("");
           setLoginpassword("");
         }
+        console.log(response.data);
       })
       .catch((error) => {
         if (error.response) {
           const errorMessage = error.response.data.message;
 
-          if (errorMessage === "User not registered") {
-            alert("User not registered. Please sign up first.");
-          } else if (errorMessage === "Password is incorrect") {
-            alert("Password is incorrect. Please try again.");
-          } else {
-            alert("An error occurred. Please try again.");
+          // Customize the alerts based on the error message
+          switch (errorMessage) {
+            case "User not registered":
+              alert("User not registered. Please sign up first.");
+              break;
+            case "Password is incorrect":
+              alert("Password is incorrect. Please try again.");
+              break;
+            default:
+              alert("An error occurred. Please try again.");
+              break;
           }
 
-          console.log("Error Response Data:", error.response.data);
-          console.log("Error Response Status:", error.response.status);
-          console.log("Error Response Headers:", error.response.headers);
+          console.error("Error Response Data:", error.response.data);
+          console.error("Error Response Status:", error.response.status);
+          console.error("Error Response Headers:", error.response.headers);
         } else if (error.request) {
-          console.log("Error Request:", error.request);
+          console.error("Error Request:", error.request);
         } else {
-          console.log("Error Message:", error.message);
+          console.error("Error Message:", error.message);
         }
-        console.log("Error Config:", error.config);
+        console.error("Error Config:", error.config);
       });
   };
 

@@ -11,23 +11,22 @@ const Service = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/verify", { withCredentials: true })
-      .then((res) => {
-        if (!res.data.status) {
-          navigate("/register");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        navigate("/register");
-      });
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      navigate('/register');
+    }
   }, [navigate]);
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/service/service")
+      .get("http://localhost:8000/api/service/service", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
       .then((res) => {
         setService(res.data.data);
         setFilteredService(res.data.data);
@@ -120,7 +119,9 @@ const Service = () => {
             </div>
           ))
         ) : (
-          <p className="text-white">No services found</p>
+          <p className="text-white">
+            No services found, Register to see the data
+          </p>
         )}
       </div>
     </main>

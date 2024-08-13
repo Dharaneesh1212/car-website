@@ -57,7 +57,7 @@ export const signin = async (req, res) => {
 
     return res
       .status(200)
-      .json({ status: true, message: "Logged in successfully" });
+      .json({ token, status: true, message: "Logged in successfully" });
   } catch (error) {
     return res.status(500).json({ status: false, message: error.message });
   }
@@ -119,15 +119,13 @@ export const resetpassword = async (req, res) => {
 };
 
 // verify
-export const verifyuser = async (req, res) => {
+export const verifyUser = async (req, res, next) => {
   try {
     const token = req.cookies.token;
     if (!token) {
-      return res.json({ status: false, message: "no token" });
+      return res.status(401).json({ status: false, message: "No token" });
     }
-    const verify = await jwt.verify(token, process.env.KEY);
-    return res.json({ status: true, message: "User verified successfully" });
   } catch (error) {
-    return res.json({ status: false, message: error.message });
+    return res.status(401).json({ status: false, message: error.message });
   }
 };

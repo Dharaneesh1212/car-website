@@ -11,23 +11,35 @@ const Amc = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/user/verify", { withCredentials: true })
-      .then((res) => {
-        if (!res.data.status) {
-          navigate("/register");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        navigate("/register");
-      });
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/register");
+    }
   }, [navigate]);
+  // axios.defaults.withCredentials = true;
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8000/api/user/verify")
+  //     .then((res) => {
+  //       if (res.data.status) {
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       navigate("/register");
+  //     });
+  // }, []);
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/service/amc")
+      .get("http://localhost:8000/api/service/amc", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
       .then((res) => {
         setAmc(res.data.data);
         setFilteredAmc(res.data.data);
@@ -120,7 +132,9 @@ const Amc = () => {
             </div>
           ))
         ) : (
-          <p className="text-white">No services found</p>
+          <p className="text-white">
+            No services found, Register to see the data
+          </p>
         )}
       </div>
     </main>
