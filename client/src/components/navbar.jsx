@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { MdHome, MdContactMail, MdMenu, MdClose } from "react-icons/md";
 import { GrGallery } from "react-icons/gr";
 import { BiSolidCarMechanic } from "react-icons/bi";
@@ -7,13 +7,31 @@ import { FaCrown, FaUser } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, [handleLogout]);
+
   return (
-    <main id="navbar" className="w-screen fixed flex items-center justify-between p-4 z-10 bg-transparent">
+    <main
+      id="navbar"
+      className="w-screen fixed flex items-center justify-between p-4 z-10 bg-transparent"
+    >
       <div className="font-semibold text-xl text-white animate__animated animate__zoomIn">
         <h1>
           AUT<span className="text-red-600">O</span>W
@@ -70,14 +88,24 @@ const Navbar = () => {
           <MdContactMail />
           CONTACT
         </Link>
-        <Link
-          to="/register"
-          className="animate__animated animate__zoomIn flex justify-center items-center gap-1 text-xl text-white hover:text-red-600"
-          onClick={() => setIsOpen(false)}
-        >
-          <FaUser />
-          REGISTER
-        </Link>
+        {isLoggedIn ? (
+          <button
+            className="animate__animated animate__zoomIn flex justify-center items-center gap-1 text-xl text-white hover:text-red-600"
+            onClick={handleLogout}
+          >
+            <FaUser />
+            LOGOUT
+          </button>
+        ) : (
+          <Link
+            to="/register"
+            className="animate__animated animate__zoomIn flex justify-center items-center gap-1 text-xl text-white hover:text-red-600"
+            onClick={() => setIsOpen(false)}
+          >
+            <FaUser />
+            REGISTER
+          </Link>
+        )}
       </div>
     </main>
   );
