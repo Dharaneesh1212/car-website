@@ -17,7 +17,7 @@ const router = express.Router();
 router.post("/", create);
 
 // GET: http://localhost:8000/api/service/all
-router.get("/all",verifyJWT, all);
+router.get("/all", all);
 
 // GET: http://localhost:8000/api/service/servicebyid
 router.get("/servicebyid/:id",verifyJWT, getServiceById);
