@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { StoreContext } from "./context";
 
 const Amc = () => {
   const [amc, setAmc] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredAmc, setFilteredAmc] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const { url } = useContext(StoreContext);
+
 
   const navigate = useNavigate();
 
@@ -34,7 +37,7 @@ const Amc = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://car-website-server.onrender.com/api/service/amc", {
+      .get(`${url}/api/service/amc`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

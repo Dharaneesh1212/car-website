@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router";
 import axios from "axios";
+import { StoreContext } from "./context";
 
 const EditService = () => {
   const { id } = useParams();
@@ -12,13 +13,14 @@ const EditService = () => {
   const [complaint, setComplaint] = useState("");
   const [status, setStatus] = useState("");
   const [amc, setAmc] = useState(false);
+  const { url } = useContext(StoreContext);
 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://car-website-server.onrender.com/api/service/servicebyid/${id}`)
+      .get(`${url}/api/service/servicebyid/${id}`)
       .then((res) => {
         const data = res.data.data;
         setUsername(data.username);
@@ -46,10 +48,7 @@ const EditService = () => {
         amc,
       };
 
-      await axios.put(
-        `https://car-website-server.onrender.com/api/service/${id}`,
-        updatedService
-      );
+      await axios.put(`${url}/api/service/${id}`, updatedService);
       window.alert("Service updated successfully");
       navigate("/adminService");
     } catch (error) {

@@ -1,19 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import axios from "axios";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import { StoreContext } from "./context";
 
 const Service = () => {
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { url } = useContext(StoreContext);
+
 
   const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://car-website-server.onrender.com/api/service/all")
+      .get(`${url}/api/service/all`)
       .then((res) => {
         setService(res.data.data);
         setLoading(false);
@@ -26,7 +29,7 @@ const Service = () => {
 
   const handleDelete = async (id) => {
     try {
-      axios.delete(`https://car-website-server.onrender.com/api/service/${id}`);
+      axios.delete(`${url}/api/service/${id}`);
       window.confirm("Do you want to delete the service")
       setService(service.filter((item) => item._id !== id));
     } catch (error) {

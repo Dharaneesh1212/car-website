@@ -1,6 +1,7 @@
 import Service from "./service";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { StoreContext } from "./context";
 
 const AdminService = () => {
   const [username, setUsername] = useState("");
@@ -9,6 +10,7 @@ const AdminService = () => {
   const [complaint, setComplaint] = useState("");
   const [status, setStatus] = useState("pending");
   const [amc, setAmc] = useState(false);
+  const { url } = useContext(StoreContext);
 
   const [loading, setLoading] = useState(true);
 
@@ -23,7 +25,7 @@ const AdminService = () => {
     };
     setLoading(true);
     try {
-      await axios.post("https://car-website-server.onrender.com/api/service", data);
+      await axios.post(`${url}/api/service`, data);
       setLoading(false);
       alert("Service registered successfully");
       setUsername("");

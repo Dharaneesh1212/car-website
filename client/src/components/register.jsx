@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { StoreContext } from "./context";
 
 const Register = () => {
   const [activeTab, setActiveTab] = useState("sign-up");
+  const { url } = useContext(StoreContext);
+
 
   const handleTabToggle = () => {
     setActiveTab(activeTab === "sign-up" ? "sign-in" : "sign-up");
@@ -20,7 +23,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://car-website-server.onrender.com/api/user/register", {
+      .post(`${url}/api/user/register`, {
         username,
         email,
         password,
@@ -58,7 +61,7 @@ const Register = () => {
 
     axios
       .post(
-        "https://car-website-server.onrender.com/api/user/login",
+        `${url}/api/user/login`,
         {
           email: loginemail,
           password: loginpassword,

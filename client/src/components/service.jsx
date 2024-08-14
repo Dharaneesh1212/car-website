@@ -1,27 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { StoreContext } from "./context";
 
 const Service = () => {
   const [service, setService] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredService, setFilteredService] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const { url } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem("token");
 
     if (!token) {
-      navigate('/register');
+      navigate("/register");
     }
   }, [navigate]);
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://car-website-server.onrender.com/api/service/service", {
+      .get(`${url}/api/service/service`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { StoreContext } from "./context";
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
   const { token } = useParams();
+  const { url } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://car-website-server.onrender.com/api/user/resetpassword/" + token, {
+      .post(`${url}/api/user/resetpassword/` + token, {
         password,
       })
       .then((response) => {

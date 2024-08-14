@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import axios from "axios";
+import { StoreContext } from "./context";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
+  const { url } = useContext(StoreContext);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://car-website-server.onrender.com/api/user/forgotpassword", {
+      .post(`${url}/api/user/forgotpassword`, {
         email,
       })
       .then((response) => {
