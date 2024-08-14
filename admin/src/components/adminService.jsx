@@ -23,7 +23,7 @@ const AdminService = () => {
     };
     setLoading(true);
     try {
-      await axios.post("http://localhost:8000/api/service", data);
+      await axios.post("https://car-website-server.onrender.com/api/service", data);
       setLoading(false);
       alert("Service registered successfully");
       setUsername("");

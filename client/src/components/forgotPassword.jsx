@@ -7,7 +7,7 @@ const ForgotPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/user/forgotpassword", {
+      .post("https://car-website-server.onrender.com/api/user/forgotpassword", {
         email,
       })
       .then((response) => {

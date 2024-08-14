@@ -18,7 +18,7 @@ const EditService = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:8000/api/service/servicebyid/${id}`)
+      .get(`https://car-website-server.onrender.com/api/service/servicebyid/${id}`)
       .then((res) => {
         const data = res.data.data;
         setUsername(data.username);
@@ -47,7 +47,7 @@ const EditService = () => {
       };
 
       await axios.put(
-        `http://localhost:8000/api/service/${id}`,
+        `https://car-website-server.onrender.com/api/service/${id}`,
         updatedService
       );
       window.alert("Service updated successfully");

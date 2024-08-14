@@ -21,7 +21,7 @@ const Service = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/service/service", {
+      .get("https://car-website-server.onrender.com/api/service/service", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

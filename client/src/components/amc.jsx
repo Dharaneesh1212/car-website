@@ -34,7 +34,7 @@ const Amc = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/service/amc", {
+      .get("https://car-website-server.onrender.com/api/service/amc", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,

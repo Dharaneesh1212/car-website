@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/user/register", {
+      .post("https://car-website-server.onrender.com/api/user/register", {
         username,
         email,
         password,
@@ -58,7 +58,7 @@ const Register = () => {
 
     axios
       .post(
-        "http://localhost:8000/api/user/login",
+        "https://car-website-server.onrender.com/api/user/login",
         {
           email: loginemail,
           password: loginpassword,

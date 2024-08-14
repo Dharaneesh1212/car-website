@@ -13,7 +13,7 @@ const Service = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:8000/api/service/all")
+      .get("https://car-website-admin.onrender.com/api/service/all")
       .then((res) => {
         setService(res.data.data);
         setLoading(false);
@@ -26,7 +26,7 @@ const Service = () => {
 
   const handleDelete = async (id) => {
     try {
-      axios.delete(`http://localhost:8000/api/service/${id}`);
+      axios.delete(`https://car-website-server.onrender.com/api/service/${id}`);
       window.confirm("Do you want to delete the service")
       setService(service.filter((item) => item._id !== id));
     } catch (error) {

@@ -11,7 +11,7 @@ const ResetPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8000/api/user/resetpassword/" + token, {
+      .post("https://car-website-server.onrender.com/api/user/resetpassword/" + token, {
         password,
       })
       .then((response) => {
