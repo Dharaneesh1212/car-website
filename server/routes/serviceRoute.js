@@ -20,10 +20,10 @@ router.post("/", create);
 router.get("/all", all);
 
 // GET: http://localhost:8000/api/service/servicebyid
-router.get("/servicebyid/:id",verifyJWT, getServiceById);
+router.get("/servicebyid/:id", getServiceById);
 
 // GET: http://localhost:8000/api/service/servicebyusername
-router.get("/servicebyname/:username",verifyJWT, serviceByUsername);
+router.get("/servicebyname/:username", serviceByUsername);
 
 // PUT: http://localhost:8000/api/service/
 router.put("/:id", update);
@@ -32,9 +32,9 @@ router.put("/:id", update);
 router.delete("/:id", deleteService);
 
 // GET: http://localhost:8000/api/service/amc
-router.get("/amc",verifyJWT, getAmc);
+router.get("/amc", verifyJWT, getAmc);
 
 // GET: http://localhost:8000/api/service/service
-router.get("/service",verifyJWT, getService);
+router.get("/service", verifyJWT, getService);
 
 export default router;
