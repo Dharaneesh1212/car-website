@@ -13,7 +13,7 @@ const Service = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://car-website-admin.onrender.com/api/service/all")
+      .get("https://car-website-server.onrender.com/api/service/all")
       .then((res) => {
         setService(res.data.data);
         setLoading(false);
