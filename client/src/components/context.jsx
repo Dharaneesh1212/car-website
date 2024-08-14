@@ -3,7 +3,7 @@ import { createContext } from "react";
 export const StoreContext = createContext();
 
 const Context = ({ children }) => {
-    const url = "http://localhost:8000"; // Corrected typo in localhost
+    const url = "https://car-website-server.onrender.com";
 
     return (
         <StoreContext.Provider value={{ url }}>
