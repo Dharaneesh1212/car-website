@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { createContext } from "react";
 
-export const StoreContext = useContext();
+export const StoreContext = createContext();
 
 const Context = ({children}) => {
     const url = "http://localhoste:8000"
