@@ -48,49 +48,62 @@
 /* Mobile Responsive */
 @media (min-width: 375px) and (max-width: 425px) {
   #register {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24rem;
+    flex-direction: column;
+    width: 90%;
+    height: auto;
   }
+
+  #signin,
   #signup {
-    height: 30rem;
-    width: 12rem;
-    font-size: 1rem;
-    padding: 1rem;
+    height: auto;
+    width: 100%;
+    margin-bottom: 1rem;
   }
-  #signin {
-    height: 30rem;
-    width: 12rem;
-    font-size: 1rem;
-    padding: 1rem;
-  }
-  #signupform {
-    height: 30rem;
-    width: 11.8rem;
-    font-size: 1rem;
-    padding: 1rem;
-  }
+
+  #signupform,
   #signinform {
-    height: 30rem;
-    width: 11.8rem;
+    width: 100%;
+  }
+
+  #signupform input,
+  #signinform input {
+    height: 2rem;
+    width: 80%;
+  }
+
+  #signupform button,
+  #signinform button {
+    height: 2.5rem;
+  }
+
+  #signin h1,
+  #signup h1 {
+    font-size: 1.5rem;
+  }
+
+  #signupform h1,
+  #signinform h1 {
+    font-size: 1.25rem;
+  }
+
+  #signin p,
+  #signup p {
     font-size: 1rem;
-    padding: 1rem;
   }
-  #inputone {
-    width: 10rem;
+
+  #signupform .gap-10,
+  #signinform .gap-10 {
+    gap: 1rem;
   }
-  #inputtwo {
-    width: 10rem;
+
+  #signupform .gap-8,
+  #signinform .gap-8 {
+    gap: 1rem;
   }
-  #inputthree {
-    width: 10rem;
-  }
-  #inputfour {
-    width: 10rem;
-  }
-  #inputfive {
-    width: 10rem;
+
+  #signin .gap-4,
+  #signup .gap-4 {
+    gap: 0.5rem;
   }
   #text-container {
     top: 10rem;
@@ -217,17 +230,63 @@
 
 /* Tablet Responsive */
 @media (min-width: 426px) and (max-width: 768px) {
+  #register {
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+  }
+
+  #signin,
   #signup {
-    width: 24rem;
+    height: auto;
+    width: 100%;
+    margin-bottom: 1rem;
   }
-  #signin {
-    width: 24rem;
-  }
-  #signupform {
-    width: 24rem;
-  }
+
+  #signupform,
   #signinform {
-    width: 24rem;
+    width: 100%;
+  }
+
+  #signupform input,
+  #signinform input {
+    height: 2rem;
+    width: 80%;
+  }
+
+  #signupform button,
+  #signinform button {
+    height: 2.5rem;
+  }
+
+  #signin h1,
+  #signup h1 {
+    font-size: 2rem;
+  }
+
+  #signupform h1,
+  #signinform h1 {
+    font-size: 1.5rem;
+  }
+
+  #signin p,
+  #signup p {
+    font-size: 1.25rem;
+  }
+
+  #signupform .gap-10,
+  #signinform .gap-10 {
+    gap: 1.5rem;
+  }
+
+  #signupform .gap-8,
+  #signinform .gap-8 {
+    gap: 1.25rem;
+  }
+
+  #signin .gap-4,
+  #signup .gap-4 {
+    gap: 1rem;
   }
   #text-container {
     top: 10rem;
