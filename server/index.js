@@ -14,7 +14,7 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 // middleware
 app.use(express.json());
 app.use(cors({
-  origin:["https://car-website-client.onrender.com","http://localhost:5174"],
+  origin:["https://car-website-client.onrender.com","https://car-website-admin.onrender.com"],
   credentials:true
 }));
 app.use(cookieParser());
