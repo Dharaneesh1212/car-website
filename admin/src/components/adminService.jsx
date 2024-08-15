@@ -122,7 +122,7 @@ const AdminService = () => {
           </button>
         </div>
       </div>
-      <Service />
+      <Service loading={loading}/>
     </main>
   );
 };

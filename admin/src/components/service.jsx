@@ -5,9 +5,9 @@ import { MdDelete } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "./context";
 
-const Service = () => {
+const Service = ({ loading }) => {
   const [service, setService] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const { url } = useContext(StoreContext);
 
   const navigate = useNavigate();
@@ -17,18 +17,18 @@ const Service = () => {
       .get(`${url}/api/service/all`)
       .then((res) => {
         setService(res.data.data);
-        setLoading(false);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
-        setLoading(false);
+        setIsLoading(false);
       });
   };
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     fetch();
-  }, []);
+  }, [loading]);
 
   const handleDelete = async (id) => {
     try {
