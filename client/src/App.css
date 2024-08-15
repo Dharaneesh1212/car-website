@@ -48,63 +48,36 @@
 /* Mobile Responsive */
 @media (min-width: 375px) and (max-width: 425px) {
   #register {
-    flex-direction: column;
-    width: 90%;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24rem;
   }
 
-  #signin,
-  #signup {
-    height: auto;
-    width: 100%;
-    margin-bottom: 1rem;
+  #signup,
+  #signin {
+    height: 30rem;
+    width: 12rem;
+    font-size: 1rem;
+    padding: 1rem;
   }
 
   #signupform,
   #signinform {
-    width: 100%;
-  }
-
-  #signupform input,
-  #signinform input {
-    height: 2rem;
-    width: 80%;
-  }
-
-  #signupform button,
-  #signinform button {
-    height: 2.5rem;
-  }
-
-  #signin h1,
-  #signup h1 {
-    font-size: 1.5rem;
-  }
-
-  #signupform h1,
-  #signinform h1 {
-    font-size: 1.25rem;
-  }
-
-  #signin p,
-  #signup p {
+    height: 30rem;
+    width: 11.8rem;
     font-size: 1rem;
+    padding: 1rem;
   }
 
-  #signupform .gap-10,
-  #signinform .gap-10 {
-    gap: 1rem;
+  #inputone,
+  #inputtwo,
+  #inputthree,
+  #inputfour,
+  #inputfive {
+    width: 10rem;
   }
 
-  #signupform .gap-8,
-  #signinform .gap-8 {
-    gap: 1rem;
-  }
-
-  #signin .gap-4,
-  #signup .gap-4 {
-    gap: 0.5rem;
-  }
   #text-container {
     top: 10rem;
     left: 1rem;
@@ -115,6 +88,7 @@
   #text-container p {
     font-size: 0.75rem;
   }
+  
   #review {
     flex-direction: column;
     align-items: center;
@@ -148,6 +122,7 @@
   #card-six p {
     font-size: 0.75rem;
   }
+  
   #contact-box {
     padding: 4rem 1rem;
     width: 100%;
@@ -200,25 +175,22 @@
   #send {
     width: 100%;
   }
+
   #sub-ones,
   #sub-twos {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
+
   #sub-onea,
   #sub-twoa {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
-  #forgot-password {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20rem;
-    width: 20rem;
-  }
+
+  #forgot-password,
   #reset-password {
     display: flex;
     align-items: center;
@@ -230,64 +202,16 @@
 
 /* Tablet Responsive */
 @media (min-width: 426px) and (max-width: 768px) {
-  #register {
-    flex-direction: column;
-    width: 80%;
-    height: auto;
-  }
-
-  #signin,
-  #signup {
-    height: auto;
-    width: 100%;
-    margin-bottom: 1rem;
+  #signup,
+  #signin {
+    width: 24rem;
   }
 
   #signupform,
   #signinform {
-    width: 100%;
+    width: 24rem;
   }
 
-  #signupform input,
-  #signinform input {
-    height: 2rem;
-    width: 80%;
-  }
-
-  #signupform button,
-  #signinform button {
-    height: 2.5rem;
-  }
-
-  #signin h1,
-  #signup h1 {
-    font-size: 2rem;
-  }
-
-  #signupform h1,
-  #signinform h1 {
-    font-size: 1.5rem;
-  }
-
-  #signin p,
-  #signup p {
-    font-size: 1.25rem;
-  }
-
-  #signupform .gap-10,
-  #signinform .gap-10 {
-    gap: 1.5rem;
-  }
-
-  #signupform .gap-8,
-  #signinform .gap-8 {
-    gap: 1.25rem;
-  }
-
-  #signin .gap-4,
-  #signup .gap-4 {
-    gap: 1rem;
-  }
   #text-container {
     top: 10rem;
     left: 2rem;
@@ -306,6 +230,7 @@
   #text-container div:nth-child(2) p {
     font-size: 0.875rem;
   }
+
   #review {
     flex-direction: column;
     align-items: center;
@@ -339,6 +264,7 @@
   #card-six p {
     font-size: 0.875rem;
   }
+
   #contact-box {
     padding: 8rem 3rem 4rem;
     width: 100%;
@@ -386,21 +312,22 @@
   #send {
     width: 100%;
   }
+
   #sub-ones,
   #sub-twos {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
+
   #sub-onea,
   #sub-twoa {
     display: flex;
     flex-direction: column;
     margin: 1rem;
   }
-  #forgot-password {
-    height: 20rem;
-  }
+
+  #forgot-password,
   #reset-password {
     height: 20rem;
   }
