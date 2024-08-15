@@ -5,7 +5,7 @@
 }
 
 #chvy {
-  background-image: url("E:/projects/car-website/client/src/assets/images/chvy.jpg");
+  background-image: url("./assets/images/chvy.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
