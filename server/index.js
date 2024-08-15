@@ -13,7 +13,10 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 
 // middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:["https://car-website-client.onrender.com","http://localhost:5174"],
+  credentials:true
+}));
 app.use(cookieParser());
 
 // Routes for authentication
