@@ -20,9 +20,8 @@ const Service = () => {
     }
   }, [navigate]);
 
-  useEffect(() => {
-    setLoading(true);
-    axios
+  const fetch = async () => {
+    await axios
       .get(`${url}/api/service/service`, {
         headers: {
           "Content-Type": "application/json",
@@ -38,6 +37,11 @@ const Service = () => {
         console.log(error);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    fetch();
   }, []);
 
   useEffect(() => {

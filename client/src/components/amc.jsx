@@ -1,4 +1,4 @@
-import { useState, useEffect,useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { StoreContext } from "./context";
@@ -9,7 +9,6 @@ const Amc = () => {
   const [filteredAmc, setFilteredAmc] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const { url } = useContext(StoreContext);
-
 
   const navigate = useNavigate();
 
@@ -34,9 +33,8 @@ const Amc = () => {
   //     });
   // }, []);
 
-  useEffect(() => {
-    setLoading(true);
-    axios
+  const fetch = async () => {
+    await axios
       .get(`${url}/api/service/amc`, {
         headers: {
           "Content-Type": "application/json",
@@ -52,6 +50,11 @@ const Amc = () => {
         console.log(error);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    fetch();
   }, []);
 
   useEffect(() => {
