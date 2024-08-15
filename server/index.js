@@ -13,10 +13,7 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 
 // middleware
 app.use(express.json());
-app.use(cors({
-  origin:["http://localhost:5173","http://localhost:5174"],
-  credentials:true
-}));
+app.use(cors());
 app.use(cookieParser());
 
 // Routes for authentication
